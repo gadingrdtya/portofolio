@@ -1,0 +1,72 @@
+[CONTEXT]
+Design a single-page personal developer portfolio for a full-stack developer. The product helps users showcase their projects, experience, and tech stack to potential clients or employers with a strong visual statement.
+
+[OVERALL STYLE]
+Visual style: Dark Mode Native with strong elements of Neubrutalism and Developer aesthetics. Mood: Energetic, technical, bold, edgy. Inspired by developer tools and Vercel dark mode aesthetics. The interface feels highly contrast-driven with generous whitespace.
+
+[SCREEN TO GENERATE]
+Generate the Portfolio Landing Page screen with this layout (top to bottom):
+- Hero Section: A centered mockup of a browser window (with 3 mac-style control dots on the top left). Inside the window, a split layout: bold typography and CTA buttons on the left, and a vertical image placeholder (280x320px) on the right.
+- Tentang Saya (About) Section: A split layout with text/description on the left and a vertical image placeholder (240x320px) on the right.
+- Pengalaman (Experience) Section: A vertical timeline stepper layout. Each item has a line connecting it to the next, with an orange dot indicator.
+- Keahlian (Skills) Section: A full-width banner containing an infinite CSS scrolling marquee. 
+- Projek (Projects) Section: A 2-column grid of project cards.
+- Footer (Kontak) Section: A massive full-width orange banner. The background has large, overlapping, faded typography. Floating on top of this background are two contact cards.
+
+[COMPONENTS]
+Required components:
+- Browser Window Card: Dark grey background with a 1px solid border. Top bar with 3 small colored circles.
+- Timeline Stepper: Left border/line with a primary color dot indicator, containing role, date, and description.
+- Project Card: Dark grey surface, subtle rounded corners, top image placeholder, title, description, and an icon link button.
+- Infinite Marquee: CSS infinite scroll animation featuring text intermixed with icons.
+- Solid Button: Primary orange background, pure black text.
+- Outline Button: Transparent background, white text, 1px white solid border.
+
+[DESIGN TOKENS]
+Colors:
+- Primary: #F59E0B (used for: primary CTA, marquee banner, timeline dots, hover states)
+- Background: #121212 (deep charcoal canvas)
+- Surface: #1E1E1E (slightly lighter dark grey for cards and browser mockup)
+- Text-primary: #F9FAFB (off-white for headings and primary text)
+- Text-secondary: #9CA3AF (muted cool gray for paragraphs and dates)
+- Border: #333333 (hairline borders for depth)
+
+Typography:
+- Headings: Use a very heavy, blocky, display font (e.g., 'Archivo Black', 'Clash Display', or 'Impact'), weight 900. H1 48px / H2 32px / H3 24px. Uppercase heavily preferred for section titles.
+- Body: Inter or Roboto, 16px, weight 400, line-height 1.6.
+- Marquee text: Uppercase, tracking (letter-spacing) tight.
+
+Spacing: 8px grid system. Very generous whitespace. Section gaps 96px to 128px.
+Border radius: 8px for all cards, browser mockups, and buttons.
+Elevation: Flat design. No drop shadows. Depth is achieved purely via 1px `#333333` border and surface color contrast.
+
+[CONTENT]
+Hero headline: "GADING RADITYA PRATAMA."
+Hero subheadline: "I am a Full-stack Developer focusing on building scalable web applications. Experienced in React, Node.js, Express, and Supabase."
+About text: "Specialized in backend architectures, API development, and dynamic frontend interfaces. Passionate about solving complex problems through clean code."
+Experience 1: "Backend Web Developer | 2025 - Present" - "Developed a Predictive Maintenance Backend API using Node.js, incorporating routes for machine health, failure statistics, and a cron scheduler."
+Experience 2: "Full-stack Developer | 2024 - 2025" - "Built dynamic web dashboards with React and integrated secure databases using Supabase."
+Projects 1: "Predictive Maintenance Dashboard" - "Full-stack predictive maintenance system integrated with DeepL API for dynamic translations and real-time monitoring."
+Marquee items: "REACT • NODE.JS • EXPRESS.JS • SUPABASE • POSTGRESQL • TAILWIND CSS • GIT"
+Contact CTA: "HUBUNGI SAYA"
+
+[INTERACTIONS]
+- Hover on buttons: Scale 1.05, cursor pointer.
+- Hover on project cards: 1px border changes to primary color (#F59E0B).
+- Focus: 2px ring in primary color, offset 2px (WCAG).
+- Animation: Smooth infinite horizontal translation for the marquee.
+
+[RESPONSIVE]
+Desktop-first approach. Breakpoints: sm 640, md 768, lg 1024, xl 1280.
+On mobile: Stack the browser window layout vertically, change the project grid to 1-column, reduce section gaps to 64px, and reduce H1 size to 32px.
+
+[ACCESSIBILITY]
+WCAG AAA compliant for text contrast. Semantic HTML5 (header, nav, main, footer). Use aria-labels for icon-only buttons. Touch targets ≥44x44px.
+
+[TECH OUTPUT]
+Generate code using Vite + React + Tailwind CSS. Use `react-icons` for all iconography. Use semantic HTML5. Modular component structure within a single file for preview. Use arbitrary values in Tailwind class names where necessary to match specific hex codes or exact spacing.
+
+[RULES TO NEVER BREAK]
+- Never use drop shadows (box-shadow). Keep the design entirely flat.
+- Never use light mode colors; this is strictly a dark mode interface.
+- Always use the heavy display font for headings to maintain the edgy neubrutalism aesthetic.
