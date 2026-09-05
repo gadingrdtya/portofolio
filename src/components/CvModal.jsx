@@ -38,47 +38,50 @@ export default function CvModal() {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Bar */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-300 dark:border-border bg-neutral-100 dark:bg-[#181818]">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5">
-              <span className="w-3 h-3 rounded-full bg-[#EF4444]" />
-              <span className="w-3 h-3 rounded-full bg-[#F59E0B]" />
-              <span className="w-3 h-3 rounded-full bg-[#10B981]" />
+        <div className="border-b border-neutral-300 dark:border-border bg-neutral-100 dark:bg-[#181818]">
+          <div className="flex items-center justify-between gap-2 px-3 sm:px-4 py-2.5">
+            <div className="flex min-w-0 items-center gap-2">
+              <div className="flex shrink-0 items-center gap-1.5">
+                <span className="w-3 h-3 rounded-full bg-[#EF4444]" />
+                <span className="w-3 h-3 rounded-full bg-[#F59E0B]" />
+                <span className="hidden xs:inline-block w-3 h-3 rounded-full bg-[#10B981]" />
+              </div>
+              <div className="flex min-w-0 items-center gap-1.5 text-xs sm:text-sm font-semibold tracking-wide uppercase text-neutral-700 dark:text-text-primary">
+                <FileText className="w-4 h-4 shrink-0 text-primary" />
+                <span className="truncate">CV_Gading_Raditya_Pratama.pdf</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 pl-2 text-xs sm:text-sm font-semibold tracking-wide uppercase text-neutral-700 dark:text-text-primary">
-              <FileText className="w-4 h-4 text-primary" />
-              <span>CV_Gading_Raditya_Pratama.pdf</span>
-            </div>
+
+            <button
+              type="button"
+              onClick={closeCv}
+              aria-label="Tutup modal"
+              className="shrink-0 rounded p-2 text-neutral-600 dark:text-text-secondary hover:text-black dark:hover:text-white hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 px-3 sm:px-4 pb-2.5">
             <a
               href={pdfUrl}
               download="CV_Gading_Raditya_Pratama.pdf"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase rounded bg-primary text-black hover:scale-105 transition-transform"
+              className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 px-3 py-2 text-xs font-bold uppercase rounded bg-primary text-black hover:scale-105 transition-transform"
               title="Download CV"
             >
               <Download className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Download</span>
+              <span>Download</span>
             </a>
             <a
               href={pdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase rounded border border-neutral-400 dark:border-border text-neutral-800 dark:text-text-primary hover:border-primary transition-colors"
+              className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 px-3 py-2 text-xs font-bold uppercase rounded border border-neutral-400 dark:border-border text-neutral-800 dark:text-text-primary hover:border-primary transition-colors"
               title="Buka di Tab Baru"
             >
               <ExternalLink className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Buka Tab Baru</span>
+              <span>Buka Tab Baru</span>
             </a>
-            <button
-              type="button"
-              onClick={closeCv}
-              aria-label="Tutup modal"
-              className="p-1.5 rounded text-neutral-600 dark:text-text-secondary hover:text-black dark:hover:text-white hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
           </div>
         </div>
 
