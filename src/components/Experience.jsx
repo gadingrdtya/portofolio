@@ -16,6 +16,19 @@ export default function Experience() {
       ],
       skills: ['React.js', 'Tailwind CSS', 'JavaScript'],
     },
+    {
+      role: 'React & Back-End Cohort',
+      company: 'ASAH LED BY DICODING',
+      location: 'Jakarta, Indonesia',
+      period: 'August 2025 - January 2026',
+      points: [
+        'Mastered modern web application development using React.js for frontend architecture',
+        'Integrated AI-based backend systems to enhance application capabilities and logic',
+        'Completed an intensive training program focused on scalable web architecture and data management',
+        'Implemented AI-powered features to optimize application performance and user experience',
+      ],
+      skills: ['React.js', 'Tailwind CSS'],
+    },
   ]
 
   return (
