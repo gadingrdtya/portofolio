@@ -62,7 +62,7 @@ export default function Navbar() {
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             className="p-2 rounded border border-light-border dark:border-border text-light-text-primary dark:text-text-primary hover:border-primary transition-colors"
-            title={`Mode: ${theme === 'dark' ? 'Gelap' : 'Terang'}`}
+            title={`Mode: ${theme === 'dark' ? 'Dark' : 'Light'}`}
           >
             {theme === 'dark' ? (
               <Sun className="w-4 h-4 text-primary animate-spin-slow" />

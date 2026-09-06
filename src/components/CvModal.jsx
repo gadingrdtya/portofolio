@@ -23,7 +23,7 @@ export default function CvModal() {
 
   if (!isOpen) return null
 
-  const pdfUrl = '/CV_Gading_Raditya_Pratama.pdf'
+  const pdfUrl = '/CV_Gading Raditya Pratama.pdf'
 
   return (
     <div
@@ -48,7 +48,7 @@ export default function CvModal() {
               </div>
               <div className="flex min-w-0 items-center gap-1.5 text-xs sm:text-sm font-semibold tracking-wide uppercase text-neutral-700 dark:text-text-primary">
                 <FileText className="w-4 h-4 shrink-0 text-primary" />
-                <span className="truncate">CV_Gading_Raditya_Pratama.pdf</span>
+                <span className="truncate">CV_Gading Raditya Pratama.pdf</span>
               </div>
             </div>
 
@@ -65,7 +65,7 @@ export default function CvModal() {
           <div className="flex items-center gap-2 px-3 sm:px-4 pb-2.5">
             <a
               href={pdfUrl}
-              download="CV_Gading_Raditya_Pratama.pdf"
+              download="CV_Gading Raditya Pratama.pdf"
               className="inline-flex flex-1 sm:flex-none items-center justify-center gap-1.5 px-3 py-2 text-xs font-bold uppercase rounded bg-primary text-black hover:scale-105 transition-transform"
               title="Download CV"
             >
