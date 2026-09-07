@@ -42,6 +42,25 @@ export default function Projects() {
       badgeColor: 'bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/30',
       icon: <Smartphone className="w-5 h-5 text-primary" />,
     },
+    {
+      title: 'StockOS',
+      type: 'Full-Stack Web App',
+      tagline: 'Smart Inventory System',
+      description:
+        'End-to-end inventory management web application featuring real-time stock monitoring, automated stock-in and stock-out transaction logging, critical inventory alerts, and comprehensive downloadable reporting capabilities.',
+      keyFeatures: [
+        'Real-time inventory dashboard overview tracking total items, stock-in, and stock-out volumes',
+        'Automated tracking and instant alerts for critical low-stock items requiring restock',
+        'Comprehensive transaction reporting with date-range filters and export options',
+        'Clean, modern, and fully responsive dark-themed UI optimized for seamless multi-device usage',
+      ],
+      techStack: ['React.js', 'TypeScript', 'Vite', 'Supabase', 'Tailwind CSS'],
+      githubUrl: 'https://github.com/gadingrdtya/StockOS',
+      liveUrl: 'https://stockos-ivory.vercel.app/',
+      image: '/stockos.png',
+      badgeColor: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
+      icon: <Activity className="w-5 h-5 text-primary" />,
+    },
   ]
 
   return (
