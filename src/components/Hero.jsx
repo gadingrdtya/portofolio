@@ -38,7 +38,7 @@ export default function Hero() {
             <div className="md:col-span-7 space-y-5">
               <div className="space-y-2">
                 <p className="font-mono text-xs sm:text-sm uppercase tracking-widest text-primary font-bold">
-                  // WEB DEVELOPER ENTHUSIAST & INFORMATICS GRADUATE
+                  // WEB DEVELOPER ENTHUSIAST
                 </p>
                 <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tight text-light-text-primary dark:text-text-primary leading-[1.05]">
                   GADING RADITYA <span className="text-primary">PRATAMA.</span>

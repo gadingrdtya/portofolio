@@ -29,6 +29,19 @@ export default function Experience() {
       ],
       skills: ['React.js', 'Tailwind CSS'],
     },
+    {
+      role: 'IT Support Internship',
+      company: 'PT. BANK TABUNGAN NEGARA',
+      location: 'Jakarta, Indonesia',
+      period: 'September 2026 - Present',
+      points: [
+        'Provided technical support and troubleshooting for end-user computing issues',
+        'Maintained and updated hardware and software systems to ensure optimal performance',
+        'Assisted in the deployment and configuration of new IT solutions',
+        'Documented technical processes and created user guides for various applications',
+      ],
+      skills: ['Technical Support', 'IT Troubleshooting'],
+    },
   ]
 
   return (

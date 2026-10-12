@@ -61,6 +61,25 @@ export default function Projects() {
       badgeColor: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
       icon: <Activity className="w-5 h-5 text-primary" />,
     },
+    {
+      title: 'ATSify',
+      type: 'Full-Stack Web App',
+      tagline: 'AI-Powered ATS Resume Builder & Job Matcher',
+      description:
+        'Comprehensive resume building and optimization platform engineered to streamline job applications. Features an interactive live-preview editor, LLM-powered bullet point & summary enhancement, an intelligent Job Description matcher for ATS compliance scoring, and secure payment processing via Midtrans.',
+      keyFeatures: [
+        'Interactive real-time ATS-compliant resume builder with live A4 preview and instant PDF export',
+        'AI-powered content assistant to transform raw bullet points into high-impact accomplishments',
+        'Automated Job Description matching engine analyzing keyword gaps and calculating ATS fit score',
+        'Secure user authentication and cloud resume synchronization powered by Supabase and Midtrans payment',
+      ],
+      techStack: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'Supabase'],
+      githubUrl: 'https://github.com/gadingrdtya/ATSify',
+      liveUrl: 'https://ats-ify.vercel.app/',
+      image: '/atsify.png',
+      badgeColor: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
+      icon: <Activity className="w-5 h-5 text-primary" />,
+    },
   ]
 
   return (
