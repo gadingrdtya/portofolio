@@ -20,7 +20,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-light-bg/85 dark:bg-background/85 border-b border-light-border dark:border-border transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="#" aria-label="Home Raditya.dev" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded bg-primary flex items-center justify-center font-heading font-black text-black text-lg group-hover:scale-105 transition-transform">
             G
           </div>

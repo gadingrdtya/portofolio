@@ -19,7 +19,7 @@ export default function Projects() {
       techStack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
       githubUrl: 'https://github.com/gadingrdtya/Dokterklik',
       liveUrl: 'https://dokterklik.gadingrdtya.my.id/',
-      image: '/dokterklik.png',
+      image: '/dokterklik.webp',
       badgeColor: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
       icon: <Activity className="w-5 h-5 text-primary" />,
     },
@@ -38,7 +38,7 @@ export default function Projects() {
       techStack: ['Flutter', 'Dart', 'TensorFlow Lite', 'Firebase Firestore'],
       githubUrl: 'https://github.com/gadingrdtya/CornDoc',
       liveUrl: 'https://play.google.com/store/apps/details?id=com.corndoc.app&pcampaignid=web_share',
-      image: '/corndoc.png',
+      image: '/corndoc.webp',
       badgeColor: 'bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/30',
       icon: <Smartphone className="w-5 h-5 text-primary" />,
     },
@@ -57,7 +57,7 @@ export default function Projects() {
       techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'Python', 'Groq AI'],
       githubUrl: 'https://github.com/gadingrdtya/Convertify',
       liveUrl: 'https://convertify.gadingrdtya.my.id/',
-      image: '/convertify.png',
+      image: '/convertify.webp',
       badgeColor: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
       icon: <Activity className="w-5 h-5 text-primary" />,
     },
@@ -76,7 +76,7 @@ export default function Projects() {
       techStack: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'Supabase'],
       githubUrl: 'https://github.com/gadingrdtya/ATSify',
       liveUrl: 'https://atsify.gadingrdtya.my.id/',
-      image: '/atsify.png',
+      image: '/atsify.webp',
       badgeColor: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
       icon: <Activity className="w-5 h-5 text-primary" />,
     },
@@ -95,7 +95,7 @@ export default function Projects() {
       techStack: ['React.js', 'Three.js', 'TypeScript', 'Vite', 'Tailwind CSS'],
       githubUrl: 'https://github.com/gadingrdtya/MockDrop',
       liveUrl: 'https://mockdrop.gadingrdtya.my.id/',
-      image: '/mockdrop.png',
+      image: '/mockdrop.webp',
       badgeColor: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
       icon: <Activity className="w-5 h-5 text-primary" />,
     },
@@ -114,7 +114,7 @@ export default function Projects() {
       techStack: ['React.js', 'Vite', 'Supabase', 'Tailwind CSS'],
       githubUrl: 'https://github.com/gadingrdtya/StockOS',
       liveUrl: 'https://stockos.gadingrdtya.my.id/',
-      image: '/stockos.png',
+      image: '/stockos.webp',
       badgeColor: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
       icon: <Activity className="w-5 h-5 text-primary" />,
     },
@@ -218,6 +218,9 @@ export default function Projects() {
                       alt={`${project.title} Preview`}
                       className="relative z-10 h-full w-full object-contain transition-transform duration-200 group-hover/img:scale-[1.02]"
                       loading="lazy"
+                      width="600"
+                      height="340"
+                      decoding="async"
                     />
 
                     {/* Clean Pill Button (No Backdrop Blur, Pure Contrast) */}

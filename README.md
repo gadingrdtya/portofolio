@@ -58,12 +58,12 @@ Layout fluid yang beradaptasi sempurna di berbagai resolusi layar—dari mobile 
 ```
 PORTOFOLIO/
 ├── public/                     # Aset gambar proyek, favicon, dan CV PDF
-│   ├── convertify.png
-│   ├── atsify.png
-│   ├── mockdrop.png
-│   ├── stockos.png
-│   ├── corndoc.png
-│   ├── dokterklik.png
+│   ├── convertify.webp
+│   ├── atsify.webp
+│   ├── mockdrop.webp
+│   ├── stockos.webp
+│   ├── corndoc.webp
+│   ├── dokterklik.webp
 │   └── CV_Gading Raditya Pratama.pdf
 ├── src/
 │   ├── components/             # Komponen antarmuka modular
