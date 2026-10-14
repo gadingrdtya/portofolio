@@ -46,6 +46,7 @@ Layout fluid yang beradaptasi sempurna di berbagai resolusi layar—dari mobile 
 | :--- | :--- | :--- |
 | **Convertify** | Full-Stack Web App | Next.js, React, TypeScript, Tailwind CSS, pdf-lib, jsPDF |
 | **ATSify** | Full-Stack Web App | React.js, Tailwind CSS, Node.js, Express, Supabase, Groq AI |
+| **MockDrop** | 3D WebGL Web App | React.js, Three.js, TypeScript, Vite, Tailwind CSS |
 | **StockOS** | Full-Stack Web App | React.js, TypeScript, Vite, Supabase, Tailwind CSS |
 | **CornDoc** | Mobile App & ML | Flutter, Dart, TensorFlow Lite, Firebase Firestore |
 | **Dokterklik** | Full-Stack Web App | React.js, Node.js, Express.js, MongoDB, Tailwind CSS |
@@ -59,6 +60,7 @@ PORTOFOLIO/
 ├── public/                     # Aset gambar proyek, favicon, dan CV PDF
 │   ├── convertify.png
 │   ├── atsify.png
+│   ├── mockdrop.png
 │   ├── stockos.png
 │   ├── corndoc.png
 │   ├── dokterklik.png
