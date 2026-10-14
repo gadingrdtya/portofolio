@@ -81,6 +81,25 @@ export default function Projects() {
       icon: <Activity className="w-5 h-5 text-primary" />,
     },
     {
+      title: 'MockDrop',
+      type: '3D WebGL Web App',
+      tagline: 'Curated 3D Device Mockup Studio',
+      description:
+        'Interactive browser-based 3D device showcase studio engineered with Three.js and WebGL. Enables designers and developers to transform raw screenshots into high-fidelity device mockups with real-time screen texture mapping, dynamic camera angle presets, customizable studio backdrops, and instant high-resolution exports.',
+      keyFeatures: [
+        'Real-time WebGL canvas featuring interactive orbit controls, realistic contact shadows, and studio lighting',
+        'Dynamic screen texture mapping with intelligent aspect-ratio fitting across various device viewports',
+        'Multi-device catalog supporting flagship smartphones, tablets, modern laptops, and browser frames',
+        'High-resolution client-side export engine rendering crisp production-ready images with zero watermarks',
+      ],
+      techStack: ['React.js', 'Three.js', 'TypeScript', 'Vite', 'Tailwind CSS'],
+      githubUrl: 'https://github.com/gadingrdtya/MockDrop',
+      liveUrl: 'https://mockdrop.gadingrdtya.my.id/',
+      image: '/mockdrop.png',
+      badgeColor: 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
+      icon: <Activity className="w-5 h-5 text-primary" />,
+    },
+    {
       title: 'StockOS',
       type: 'Full-Stack Web App',
       tagline: 'Smart Inventory System',
