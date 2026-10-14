@@ -92,7 +92,7 @@ export default function Projects() {
         'Comprehensive transaction reporting with date-range filters and export options',
         'Clean, modern, and fully responsive dark-themed UI optimized for seamless multi-device usage',
       ],
-      techStack: ['React.js', 'TypeScript', 'Vite', 'Supabase', 'Tailwind CSS'],
+      techStack: ['React.js', 'Vite', 'Supabase', 'Tailwind CSS'],
       githubUrl: 'https://github.com/gadingrdtya/StockOS',
       liveUrl: 'https://stockos.gadingrdtya.my.id/',
       image: '/stockos.png',
