@@ -13,8 +13,6 @@ import {
 } from 'lucide-react'
 import blogsData from '../data/blogs.json'
 
-const FALLBACK_ILLUSTRATION = 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1200&q=80'
-
 export default function BlogPost() {
   const { slug } = useParams()
   const [copied, setCopied] = useState(false)
@@ -194,26 +192,7 @@ export default function BlogPost() {
                   {...props}
                 />
               ),
-              img: ({ node, ...props }) => (
-                <div className="my-8">
-                  <div className="rounded-2xl overflow-hidden border border-light-border dark:border-border shadow-md aspect-[16/9] bg-neutral-900">
-                    <img
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      onError={(e) => {
-                        e.target.onerror = null
-                        e.target.src = FALLBACK_ILLUSTRATION
-                      }}
-                      {...props}
-                    />
-                  </div>
-                  {props.alt && (
-                    <p className="text-center text-xs text-light-text-secondary dark:text-text-secondary mt-2 italic">
-                      {props.alt}
-                    </p>
-                  )}
-                </div>
-              ),
+              img: () => null,
               code: ({ node, inline, ...props }) => (
                 <code
                   className="px-1.5 py-0.5 rounded text-xs font-mono bg-light-bg dark:bg-background text-primary border border-light-border dark:border-border"
