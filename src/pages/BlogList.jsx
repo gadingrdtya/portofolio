@@ -53,7 +53,7 @@ export default function BlogList() {
             TECH ARTICLES & EXPLAINERS
           </h1>
           <p className="text-sm sm:text-base text-light-text-secondary dark:text-text-secondary mt-3 max-w-2xl leading-relaxed">
-            Berita dan ulasan teknologi terkini bersumber dari media kredibel (Bloomberg, Reuters, The Verge) yang dianalisis secara mendalam dan otomatis setiap hari.
+            Berita dan analisis mendalam seputar perkembangan frontier AI, model LLM terbaru, dan arsitektur software masa kini yang dikurasi dari media teknologi terkemuka dunia.
           </p>
         </div>
 
@@ -85,9 +85,9 @@ export default function BlogList() {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider whitespace-nowrap transition-all ${
+                className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider whitespace-nowrap ${
                   selectedCategory === cat
-                    ? 'bg-primary text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)]'
+                    ? 'bg-primary text-black'
                     : 'border border-light-border dark:border-border bg-light-surface dark:bg-surface text-light-text-secondary dark:text-text-secondary hover:border-primary hover:text-primary'
                 }`}
               >
@@ -103,11 +103,11 @@ export default function BlogList() {
             {filteredBlogs.map((blog) => (
               <article
                 key={blog.id}
-                className="rounded-3xl border border-light-border dark:border-border bg-light-surface dark:bg-surface p-7 sm:p-8 flex flex-col justify-between h-full hover:border-primary transition-all duration-300 hover:-translate-y-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.04)] dark:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.6)] group"
+                className="rounded-3xl border border-light-border dark:border-border bg-light-surface dark:bg-surface p-6 sm:p-8 flex flex-col justify-between h-full hover:border-primary transition-all duration-300 hover:-translate-y-1 group"
               >
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400 mb-5">
-                    <Calendar className="w-4 h-4 shrink-0 text-blue-600 dark:text-blue-400" />
+                  <div className="flex items-center gap-2 text-xs font-semibold text-light-text-primary dark:text-text-primary mb-4">
+                    <Calendar className="w-4 h-4 shrink-0 text-light-text-primary dark:text-text-primary" />
                     <span>{blog.date}</span>
                   </div>
 
@@ -122,14 +122,14 @@ export default function BlogList() {
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-light-border/50 dark:border-border/50 flex items-center justify-between">
-                  <span className="text-[11px] font-mono font-bold uppercase text-light-text-secondary dark:text-text-secondary">
+                <div className="pt-5 mt-5 border-t border-light-border/50 dark:border-border/50 flex flex-wrap items-center justify-between gap-2">
+                  <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase text-light-text-secondary dark:text-text-secondary truncate max-w-[150px]">
                     {blog.category}
                   </span>
 
                   <Link
                     to={`/blog/${blog.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400 group-hover:text-primary transition-colors"
+                    className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-light-text-primary dark:text-text-primary group-hover:text-primary transition-colors shrink-0 ml-auto"
                   >
                     <span>Read Article</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

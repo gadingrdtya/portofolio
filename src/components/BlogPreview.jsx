@@ -35,12 +35,12 @@ export default function BlogPreview() {
           {latestBlogs.map((blog) => (
             <article
               key={blog.id}
-              className="rounded-lg border border-light-border dark:border-border bg-light-surface dark:bg-surface p-7 sm:p-8 flex flex-col justify-between h-full hover:border-primary transition-all duration-200 hover:-translate-y-1 group"
+              className="rounded-3xl border border-light-border dark:border-border bg-light-surface dark:bg-surface p-6 sm:p-8 flex flex-col justify-between h-full hover:border-primary transition-all duration-300 hover:-translate-y-1 group"
             >
               <div>
-                {/* Date Header with Blue/Amber Calendar Icon */}
-                <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400 mb-5">
-                  <Calendar className="w-4 h-4 shrink-0 text-blue-600 dark:text-blue-400" />
+                {/* Date Header with Blue Calendar Icon */}
+                <div className="flex items-center gap-2 text-xs font-semibold text-light-text-primary dark:text-text-primary mb-4">
+                  <Calendar className="w-4 h-4 shrink-0 text-light-text-primary dark:text-text-primary" />
                   <span>{blog.date}</span>
                 </div>
 
@@ -57,15 +57,15 @@ export default function BlogPreview() {
                 </p>
               </div>
 
-              {/* Bottom Action: Read Article > */}
-              <div className="pt-6 mt-6 border-t border-light-border/50 dark:border-border/50 flex items-center justify-between">
-                <span className="text-[11px] font-mono font-bold uppercase text-light-text-secondary dark:text-text-secondary">
+              {/* Bottom Action: Wrap-safe flex to prevent overlapping on split screen */}
+              <div className="pt-5 mt-5 border-t border-light-border/50 dark:border-border/50 flex flex-wrap items-center justify-between gap-2">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase text-light-text-secondary dark:text-text-secondary truncate max-w-[150px]">
                   {blog.category}
                 </span>
 
                 <Link
                   to={`/blog/${blog.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400 group-hover:text-primary transition-colors"
+                  className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-light-text-primary dark:text-text-primary group-hover:text-primary transition-colors shrink-0 ml-auto"
                 >
                   <span>Read Article</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

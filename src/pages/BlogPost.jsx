@@ -80,23 +80,27 @@ export default function BlogPost() {
             <span>Semua Berita</span>
           </Link>
 
-          <span className="text-xs font-mono font-bold uppercase px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+          <span className="text-xs font-mono font-bold uppercase px-3 py-1 rounded-full border border-light-border dark:border-border bg-light-surface dark:bg-surface text-light-text-secondary dark:text-text-secondary">
             {blog.category}
           </span>
         </div>
 
-        {/* Header Metadata */}
+        {/* Header Metadata with responsive wrap */}
         <header className="mb-10">
-          <div className="flex items-center gap-2.5 text-xs font-semibold text-blue-600 dark:text-blue-400 mb-4">
-            <Calendar className="w-4 h-4" />
-            <span>{blog.date}</span>
-            <span>•</span>
-            <Clock className="w-4 h-4" />
-            <span>{blog.readTime}</span>
+          <div className="flex flex-wrap items-center gap-y-2 gap-x-3 text-xs font-semibold text-light-text-primary dark:text-text-primary mb-4">
+            <span className="inline-flex items-center gap-1.5 shrink-0">
+              <Calendar className="w-4 h-4" />
+              <span>{blog.date}</span>
+            </span>
+            <span className="text-light-text-secondary/50 dark:text-text-secondary/50">•</span>
+            <span className="inline-flex items-center gap-1.5 shrink-0">
+              <Clock className="w-4 h-4" />
+              <span>{blog.readTime}</span>
+            </span>
             {blog.sourceName && (
               <>
-                <span>•</span>
-                <span className="text-light-text-secondary dark:text-text-secondary font-normal">
+                <span className="text-light-text-secondary/50 dark:text-text-secondary/50">•</span>
+                <span className="text-light-text-secondary dark:text-text-secondary font-normal shrink-0">
                   Rujukan: <b className="font-semibold text-light-text-primary dark:text-text-primary">{blog.sourceName}</b>
                 </span>
               </>
@@ -272,14 +276,14 @@ export default function BlogPost() {
                     to={`/blog/${rel.slug}`}
                     className="group block p-6 rounded-2xl border border-light-border dark:border-border bg-light-surface dark:bg-surface hover:border-primary transition-all duration-300 shadow-sm"
                   >
-                    <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                    <div className="flex items-center gap-2 text-xs font-semibold text-light-text-primary dark:text-text-primary mb-2">
                       <Calendar className="w-3.5 h-3.5" />
                       <span>{rel.date}</span>
                     </div>
                     <h3 className="text-sm sm:text-base font-bold tracking-tight text-light-text-primary dark:text-text-primary group-hover:text-primary transition-colors line-clamp-2">
                       {rel.title}
                     </h3>
-                    <div className="mt-4 flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:text-primary">
+                    <div className="mt-4 flex items-center gap-1 text-xs font-bold text-light-text-primary dark:text-text-primary group-hover:text-primary">
                       <span>Read Article</span>
                       <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
