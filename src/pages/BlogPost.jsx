@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import {
   ArrowLeft,
@@ -9,15 +9,14 @@ import {
   Check,
   ExternalLink,
   Tag,
-  Sparkles,
-  BookOpen,
-  ArrowRight
+  ChevronRight
 } from 'lucide-react'
 import blogsData from '../data/blogs.json'
 
+const FALLBACK_ILLUSTRATION = 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=1200&q=80'
+
 export default function BlogPost() {
   const { slug } = useParams()
-  const navigate = useNavigate()
   const [copied, setCopied] = useState(false)
 
   const blog = blogsData.find((b) => b.slug === slug)
@@ -25,14 +24,14 @@ export default function BlogPost() {
   useEffect(() => {
     window.scrollTo(0, 0)
     if (blog) {
-      document.title = `${blog.title} | Raditya.dev Blog`
+      document.title = `${blog.title} | Raditya.dev`
     }
   }, [slug, blog])
 
   if (!blog) {
     return (
       <div className="py-24 max-w-xl mx-auto px-4 text-center">
-        <h1 className="text-4xl font-heading font-black text-light-text-primary dark:text-text-primary uppercase mb-3">
+        <h1 className="text-3xl font-heading font-black text-light-text-primary dark:text-text-primary uppercase mb-3">
           Artikel Tidak Ditemukan
         </h1>
         <p className="text-sm text-light-text-secondary dark:text-text-secondary mb-6">
@@ -49,7 +48,6 @@ export default function BlogPost() {
     )
   }
 
-  // Related posts (excluding current)
   const relatedPosts = blogsData.filter((b) => b.id !== blog.id).slice(0, 2)
 
   const handleCopyLink = () => {
@@ -59,7 +57,7 @@ export default function BlogPost() {
   }
 
   const shareTwitter = () => {
-    const text = encodeURIComponent(`${blog.title} via @gadingrdtya`)
+    const text = encodeURIComponent(`${blog.title}`)
     const url = encodeURIComponent(window.location.href)
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank')
   }
@@ -70,53 +68,51 @@ export default function BlogPost() {
   }
 
   return (
-    <article className="py-10 sm:py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <article className="py-10 sm:py-16 px-4 sm:px-6">
+      <div className="max-w-3xl mx-auto">
         {/* Navigation Breadcrumb */}
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-light-border/60 dark:border-border/60">
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-light-text-secondary dark:text-text-secondary hover:text-primary transition-colors"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-light-text-secondary dark:text-text-secondary hover:text-primary transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Semua Artikel</span>
+            <span>Semua Berita</span>
           </Link>
 
-          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+          <span className="text-xs font-mono font-bold uppercase px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
             {blog.category}
           </span>
         </div>
 
         {/* Header Metadata */}
-        <header className="mb-8">
-          <div className="flex items-center gap-3 text-xs text-light-text-secondary dark:text-text-secondary mb-4">
-            <span className="inline-flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-primary" />
-              {blog.date}
-            </span>
+        <header className="mb-10">
+          <div className="flex items-center gap-2.5 text-xs font-semibold text-blue-600 dark:text-blue-400 mb-4">
+            <Calendar className="w-4 h-4" />
+            <span>{blog.date}</span>
             <span>•</span>
-            <span className="inline-flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-primary" />
-              {blog.readTime}
-            </span>
+            <Clock className="w-4 h-4" />
+            <span>{blog.readTime}</span>
             {blog.sourceName && (
               <>
                 <span>•</span>
-                <span className="hidden sm:inline">Sumber: <b>{blog.sourceName}</b></span>
+                <span className="text-light-text-secondary dark:text-text-secondary font-normal">
+                  Rujukan: <b className="font-semibold text-light-text-primary dark:text-text-primary">{blog.sourceName}</b>
+                </span>
               </>
             )}
           </div>
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-light-text-primary dark:text-text-primary uppercase leading-tight mb-6">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-light-text-primary dark:text-text-primary leading-tight mb-6">
             {blog.title}
           </h1>
 
-          <p className="text-base sm:text-lg text-light-text-secondary dark:text-text-secondary leading-relaxed font-medium mb-6">
+          <p className="text-base sm:text-lg text-light-text-secondary dark:text-text-secondary leading-relaxed font-normal mb-8">
             {blog.summary}
           </p>
 
           {/* Author & Share Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl border border-light-border dark:border-border bg-light-surface dark:bg-surface">
+          <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl border border-light-border dark:border-border bg-light-surface dark:bg-surface">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-primary text-black font-heading font-black flex items-center justify-center text-sm shadow">
                 G
@@ -125,8 +121,8 @@ export default function BlogPost() {
                 <p className="text-xs sm:text-sm font-bold text-light-text-primary dark:text-text-primary">
                   Gading Raditya Pratama
                 </p>
-                <p className="text-[11px] text-light-text-secondary dark:text-text-secondary">
-                  AI Tech Dispatch • Software Engineer
+                <p className="text-[11px] font-mono text-light-text-secondary dark:text-text-secondary">
+                  Tech Explainer & Engineering Dispatch
                 </p>
               </div>
             </div>
@@ -135,7 +131,7 @@ export default function BlogPost() {
               <button
                 type="button"
                 onClick={handleCopyLink}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary transition-all"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary transition-all"
                 title="Salin Tautan Artikel"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-green-500" /> : <Share2 className="w-3.5 h-3.5" />}
@@ -145,7 +141,7 @@ export default function BlogPost() {
               <button
                 type="button"
                 onClick={shareTwitter}
-                className="px-2.5 py-1.5 text-xs font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary transition-all"
+                className="px-3 py-1.5 text-xs font-mono font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary transition-all"
                 title="Bagikan ke X"
               >
                 X
@@ -154,7 +150,7 @@ export default function BlogPost() {
               <button
                 type="button"
                 onClick={shareLinkedIn}
-                className="px-2.5 py-1.5 text-xs font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary transition-all"
+                className="px-3 py-1.5 text-xs font-mono font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary transition-all"
                 title="Bagikan ke LinkedIn"
               >
                 in
@@ -163,50 +159,49 @@ export default function BlogPost() {
           </div>
         </header>
 
-        {/* Featured Cover Image */}
-        <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-light-border dark:border-border shadow-lg mb-10 bg-neutral-900">
-          <img
-            src={blog.coverImage}
-            alt={blog.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
-
         {/* Markdown Content */}
-        <div className="prose dark:prose-invert max-w-none text-light-text-primary dark:text-text-primary leading-relaxed space-y-5">
+        <div className="prose dark:prose-invert max-w-none text-light-text-primary dark:text-text-primary leading-relaxed space-y-6">
           <ReactMarkdown
             components={{
               h2: ({ node, ...props }) => (
                 <h2
-                  className="text-xl sm:text-2xl font-heading font-black tracking-tight uppercase text-light-text-primary dark:text-text-primary pt-6 pb-2 border-b border-light-border/60 dark:border-border/60 flex items-center gap-2"
+                  className="font-heading text-xl sm:text-2xl font-black tracking-tight uppercase text-light-text-primary dark:text-text-primary pt-6 pb-2 border-b border-light-border/60 dark:border-border/60"
                   {...props}
                 />
               ),
               h3: ({ node, ...props }) => (
                 <h3
-                  className="text-lg sm:text-xl font-bold text-light-text-primary dark:text-text-primary pt-4 text-primary"
+                  className="font-heading text-lg sm:text-xl font-bold text-light-text-primary dark:text-text-primary pt-4 text-primary"
                   {...props}
                 />
               ),
               p: ({ node, ...props }) => (
-                <p className="text-sm sm:text-base leading-relaxed text-light-text-secondary dark:text-text-secondary" {...props} />
+                <p className="text-sm sm:text-base leading-relaxed text-light-text-secondary dark:text-text-secondary font-normal" {...props} />
               ),
               ul: ({ node, ...props }) => (
-                <ul className="list-disc list-inside space-y-1.5 text-sm sm:text-base text-light-text-secondary dark:text-text-secondary pl-2" {...props} />
+                <ul className="list-disc list-inside space-y-2 text-sm sm:text-base text-light-text-secondary dark:text-text-secondary pl-2" {...props} />
               ),
               ol: ({ node, ...props }) => (
-                <ol className="list-decimal list-inside space-y-1.5 text-sm sm:text-base text-light-text-secondary dark:text-text-secondary pl-2" {...props} />
+                <ol className="list-decimal list-inside space-y-2 text-sm sm:text-base text-light-text-secondary dark:text-text-secondary pl-2" {...props} />
               ),
               blockquote: ({ node, ...props }) => (
                 <blockquote
-                  className="border-l-4 border-primary pl-4 py-2 my-4 italic bg-light-surface/70 dark:bg-surface/70 rounded-r text-light-text-primary dark:text-text-primary text-sm sm:text-base"
+                  className="border-l-4 border-primary pl-4 py-2.5 my-4 italic bg-light-surface/80 dark:bg-surface/80 rounded-r text-light-text-primary dark:text-text-primary text-sm sm:text-base"
                   {...props}
                 />
               ),
               img: ({ node, ...props }) => (
                 <div className="my-8">
-                  <div className="rounded-xl overflow-hidden border border-light-border dark:border-border shadow-md">
-                    <img className="w-full max-h-[460px] object-cover" loading="lazy" {...props} />
+                  <div className="rounded-2xl overflow-hidden border border-light-border dark:border-border shadow-md aspect-[16/9] bg-neutral-900">
+                    <img
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.onerror = null
+                        e.target.src = FALLBACK_ILLUSTRATION
+                      }}
+                      {...props}
+                    />
                   </div>
                   {props.alt && (
                     <p className="text-center text-xs text-light-text-secondary dark:text-text-secondary mt-2 italic">
@@ -243,7 +238,7 @@ export default function BlogPost() {
               {blog.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs font-medium px-2.5 py-1 rounded bg-light-surface dark:bg-surface border border-light-border dark:border-border text-light-text-secondary dark:text-text-secondary"
+                  className="text-xs font-mono font-medium px-2.5 py-1 rounded-full bg-light-surface dark:bg-surface border border-light-border dark:border-border text-light-text-secondary dark:text-text-secondary"
                 >
                   #{tag}
                 </span>
@@ -255,9 +250,9 @@ export default function BlogPost() {
                 href={blog.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-light-text-secondary dark:text-text-secondary hover:text-primary transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-light-text-secondary dark:text-text-secondary hover:text-primary transition-colors"
               >
-                <span>Baca Berita Asal ({blog.sourceName})</span>
+                <span>Sumber Kredibel: {blog.sourceName}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}
@@ -275,22 +270,19 @@ export default function BlogPost() {
                   <Link
                     key={rel.id}
                     to={`/blog/${rel.slug}`}
-                    className="group block p-4 rounded-xl border border-light-border dark:border-border bg-light-surface dark:bg-surface hover:border-primary transition-all duration-300 shadow-sm"
+                    className="group block p-6 rounded-2xl border border-light-border dark:border-border bg-light-surface dark:bg-surface hover:border-primary transition-all duration-300 shadow-sm"
                   >
-                    <div className="aspect-[16/9] w-full rounded-lg overflow-hidden bg-neutral-900 mb-3">
-                      <img
-                        src={rel.coverImage}
-                        alt={rel.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                    <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                      <Calendar className="w-3.5 h-3.5" />
+                      <span>{rel.date}</span>
                     </div>
-                    <span className="text-[10px] font-bold uppercase text-primary">
-                      {rel.category}
-                    </span>
-                    <h3 className="text-sm font-bold tracking-tight text-light-text-primary dark:text-text-primary group-hover:text-primary transition-colors line-clamp-2 mt-1">
+                    <h3 className="text-sm sm:text-base font-bold tracking-tight text-light-text-primary dark:text-text-primary group-hover:text-primary transition-colors line-clamp-2">
                       {rel.title}
                     </h3>
+                    <div className="mt-4 flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:text-primary">
+                      <span>Read Article</span>
+                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </Link>
                 ))}
               </div>

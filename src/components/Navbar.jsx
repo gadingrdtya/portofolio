@@ -151,7 +151,7 @@ export default function Navbar() {
                     isBlog ? 'text-primary' : 'text-light-text-secondary dark:text-text-secondary hover:text-primary'
                   }`}
                 >
-                  {link.label} ✦
+                  {link.label}
                 </Link>
               )
             }

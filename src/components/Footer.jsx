@@ -43,7 +43,7 @@ export default function Footer() {
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-12">
             <p className="font-mono text-xs sm:text-sm uppercase tracking-widest text-neutral-900/80 font-black">
-              // 05. GET IN TOUCH
+              // 06. GET IN TOUCH
             </p>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-neutral-900 leading-tight">
               LET'S BUILD SOMETHING TOGETHER.
