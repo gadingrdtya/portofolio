@@ -16,6 +16,7 @@ import blogsData from '../data/blogs.json'
 export default function BlogPost() {
   const { slug } = useParams()
   const [copied, setCopied] = useState(false)
+  const [readingProgress, setReadingProgress] = useState(0)
 
   const blog = blogsData.find((b) => b.slug === slug)
 
@@ -25,6 +26,19 @@ export default function BlogPost() {
       document.title = `${blog.title} | Raditya.dev`
     }
   }, [slug, blog])
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (docHeight > 0) {
+        const progress = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100))
+        setReadingProgress(progress)
+      }
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true })
+    return () => window.removeEventListener('scroll', updateProgress)
+  }, [])
 
   if (!blog) {
     return (
@@ -66,8 +80,17 @@ export default function BlogPost() {
   }
 
   return (
-    <article className="py-10 sm:py-16 px-4 sm:px-6">
-      <div className="max-w-3xl mx-auto">
+    <>
+      {/* Sticky Reading Progress Bar */}
+      <div className="fixed top-0 left-0 w-full h-1 bg-transparent z-50 pointer-events-none">
+        <div
+          className="h-full bg-primary transition-all duration-100 ease-out shadow-[0_0_8px_rgba(245,158,11,0.6)]"
+          style={{ width: `${readingProgress}%` }}
+        />
+      </div>
+
+      <article className="py-10 sm:py-16 px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto">
         {/* Navigation Breadcrumb */}
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-light-border/60 dark:border-border/60">
           <Link
@@ -274,5 +297,6 @@ export default function BlogPost() {
         </footer>
       </div>
     </article>
+    </>
   )
 }

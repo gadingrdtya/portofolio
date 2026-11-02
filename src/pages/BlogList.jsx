@@ -6,11 +6,17 @@ import blogsData from '../data/blogs.json'
 export default function BlogList() {
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
+  const [visibleCount, setVisibleCount] = useState(6)
 
   useEffect(() => {
     window.scrollTo(0, 0)
     document.title = 'Tech Dispatch & Articles | Gading Raditya Pratama'
   }, [])
+
+  // Reset pagination when search or category changes
+  useEffect(() => {
+    setVisibleCount(6)
+  }, [searchQuery, selectedCategory])
 
   const categories = useMemo(() => {
     const set = new Set(blogsData.map((b) => b.category).filter(Boolean))
@@ -99,45 +105,60 @@ export default function BlogList() {
 
         {/* Responsive Grid: 1 col mobile, 2 col iPad/tablet, 3 col desktop */}
         {filteredBlogs.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
-            {filteredBlogs.map((blog) => (
-              <article
-                key={blog.id}
-                className="rounded-3xl border border-light-border dark:border-border bg-light-surface dark:bg-surface p-6 sm:p-8 flex flex-col justify-between h-full hover:border-primary transition-all duration-300 hover:-translate-y-1 group"
-              >
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-semibold text-light-text-primary dark:text-text-primary mb-4">
-                    <Calendar className="w-4 h-4 shrink-0 text-light-text-primary dark:text-text-primary" />
-                    <span>{blog.date}</span>
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+              {filteredBlogs.slice(0, visibleCount).map((blog) => (
+                <article
+                  key={blog.id}
+                  className="rounded-3xl border border-light-border dark:border-border bg-light-surface dark:bg-surface p-6 sm:p-8 flex flex-col justify-between h-full hover:border-primary transition-all duration-300 hover:-translate-y-1 group"
+                >
+                  <div>
+                    <div className="flex items-center gap-2 text-xs font-semibold text-light-text-primary dark:text-text-primary mb-4">
+                      <Calendar className="w-4 h-4 shrink-0 text-light-text-primary dark:text-text-primary" />
+                      <span>{blog.date}</span>
+                    </div>
+
+                    <h2 className="font-heading text-lg sm:text-xl font-bold tracking-tight text-light-text-primary dark:text-text-primary group-hover:text-primary transition-colors leading-snug mb-3">
+                      <Link to={`/blog/${blog.slug}`}>
+                        {blog.title}
+                      </Link>
+                    </h2>
+
+                    <p className="text-xs sm:text-sm text-light-text-secondary dark:text-text-secondary leading-relaxed line-clamp-3">
+                      {blog.summary}
+                    </p>
                   </div>
 
-                  <h2 className="font-heading text-lg sm:text-xl font-bold tracking-tight text-light-text-primary dark:text-text-primary group-hover:text-primary transition-colors leading-snug mb-3">
-                    <Link to={`/blog/${blog.slug}`}>
-                      {blog.title}
+                  <div className="pt-5 mt-5 border-t border-light-border/50 dark:border-border/50 flex flex-wrap items-center justify-between gap-2">
+                    <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase text-light-text-secondary dark:text-text-secondary truncate max-w-[150px]">
+                      {blog.category}
+                    </span>
+
+                    <Link
+                      to={`/blog/${blog.slug}`}
+                      className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-light-text-primary dark:text-text-primary group-hover:text-primary transition-colors shrink-0 ml-auto"
+                    >
+                      <span>Read Article</span>
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
-                  </h2>
+                  </div>
+                </article>
+              ))}
+            </div>
 
-                  <p className="text-xs sm:text-sm text-light-text-secondary dark:text-text-secondary leading-relaxed line-clamp-3">
-                    {blog.summary}
-                  </p>
-                </div>
-
-                <div className="pt-5 mt-5 border-t border-light-border/50 dark:border-border/50 flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase text-light-text-secondary dark:text-text-secondary truncate max-w-[150px]">
-                    {blog.category}
-                  </span>
-
-                  <Link
-                    to={`/blog/${blog.slug}`}
-                    className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-light-text-primary dark:text-text-primary group-hover:text-primary transition-colors shrink-0 ml-auto"
-                  >
-                    <span>Read Article</span>
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+            {/* Load More Button */}
+            {visibleCount < filteredBlogs.length && (
+              <div className="mt-12 sm:mt-16 text-center">
+                <button
+                  type="button"
+                  onClick={() => setVisibleCount((prev) => prev + 6)}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-light-surface dark:bg-surface border border-light-border dark:border-border text-light-text-primary dark:text-text-primary hover:border-primary hover:text-primary transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] active:translate-x-0.5 active:translate-y-0.5"
+                >
+                  <span>Muat Lebih Banyak Artikel ({filteredBlogs.length - visibleCount} tersisa)</span>
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <div className="text-center py-16 px-4 rounded-2xl border border-dashed border-light-border dark:border-border">
             <Newspaper className="w-10 h-10 text-light-text-secondary dark:text-text-secondary mx-auto mb-3 opacity-60" />
