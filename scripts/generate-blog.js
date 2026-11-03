@@ -28,10 +28,80 @@ if (!GROQ_API_KEY) {
   process.exit(1);
 }
 
-async function fetchDiverseTechNews() {
-  // Broad, rich tech queries across Software, AI, Cloud, Cybersecurity, Gadgets & Hardware
-  const query = encodeURIComponent('(technology OR "software engineering" OR "web development" OR "cybersecurity" OR "cloud computing" OR "artificial intelligence" OR "Apple" OR "Linux" OR "open source")');
-  const url = `https://news.google.com/rss/search?q=${query}&hl=en-US&gl=US&ceid=US:en`;
+// Multi-category topic pools to ensure balanced variety
+const TOPIC_CHANNELS = [
+  {
+    category: 'Software Engineering',
+    query: '"software engineering" OR "web development" OR "TypeScript" OR "React" OR "Next.js" OR "Rust language" OR "Python framework"'
+  },
+  {
+    category: 'Cybersecurity',
+    query: '"cybersecurity" OR "zero-day vulnerability" OR "data encryption" OR "API security" OR "security patch"'
+  },
+  {
+    category: 'Cloud & DevOps',
+    query: '"cloud computing" OR "Kubernetes" OR "Docker container" OR "AWS architecture" OR "microservices" OR "serverless"'
+  },
+  {
+    category: 'Artificial Intelligence',
+    query: '"AI model" OR "LLM benchmark" OR "open source AI" OR "machine learning architecture" OR "neural network"'
+  },
+  {
+    category: 'Hardware & Chips',
+    query: '"semiconductor" OR "RISC-V" OR "TSMC process" OR "GPU architecture" OR "quantum processor"'
+  }
+];
+
+// Negative blacklist: filter out crime, death, tragic accidents, lawsuits, sensational gossip
+const FORBIDDEN_WORDS = [
+  'death', 'dead', 'died', 'kill', 'killer', 'killing', 'murder', 'suicide',
+  'seizure', 'fatal', 'fatality', 'victim', 'tragedy', 'mourn', 'grief',
+  'lawsuit', 'sue', 'sued', 'suing', 'court', 'judge', 'trial', 'sentenced', 'prison',
+  'crime', 'criminal', 'arrest', 'arrested', 'fraud', 'scam', 'bribe', 'corruption',
+  'layoff', 'fired', 'fired employee', 'controversy', 'scandal'
+];
+
+function isForbiddenContent(text) {
+  const lower = text.toLowerCase();
+  return FORBIDDEN_WORDS.some(word => lower.includes(word));
+}
+
+function extractKeywords(str) {
+  const stopwords = new Set([
+    'what', 'when', 'where', 'which', 'with', 'from', 'this', 'that', 'have',
+    'more', 'about', 'will', 'been', 'were', 'into', 'they', 'their', 'then',
+    'these', 'those', 'also', 'after', 'before', 'could', 'would', 'should',
+    'report', 'reports', 'news', 'says', 'said', 'over', 'under', 'between'
+  ]);
+  return new Set(
+    str.toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length > 3 && !stopwords.has(w))
+  );
+}
+
+function isDuplicateTopic(newTitle, existingArticles) {
+  const newKeywords = extractKeywords(newTitle);
+  if (newKeywords.size === 0) return false;
+
+  for (const art of existingArticles) {
+    const existingKeywords = extractKeywords(art.title + ' ' + (art.summary || ''));
+    let sharedCount = 0;
+    for (const kw of newKeywords) {
+      if (existingKeywords.has(kw)) sharedCount++;
+    }
+    // If 3 or more significant keywords match, reject as duplicate story
+    if (sharedCount >= 3) {
+      return true;
+    }
+  }
+  return false;
+}
+
+async function fetchNewsForCategory(channel) {
+  const encodedQuery = encodeURIComponent(channel.query);
+  const url = `https://news.google.com/rss/search?q=${encodedQuery}&hl=en-US&gl=US&ceid=US:en`;
   const res = await fetch(url);
   const xml = await res.text();
 
@@ -51,12 +121,17 @@ async function fetchDiverseTechNews() {
         source = parts.pop().trim();
         rawTitle = parts.join(' - ').trim();
       }
-      items.push({
-        title: rawTitle,
-        source,
-        link: linkMatch ? linkMatch[1] : '',
-        pubDate: dateMatch ? dateMatch[1] : new Date().toISOString()
-      });
+
+      // Filter out sensational / morbid / forbidden topics
+      if (!isForbiddenContent(rawTitle)) {
+        items.push({
+          title: rawTitle,
+          source,
+          link: linkMatch ? linkMatch[1] : '',
+          pubDate: dateMatch ? dateMatch[1] : new Date().toISOString(),
+          targetCategory: channel.category
+        });
+      }
     }
   }
   return items;
@@ -71,36 +146,37 @@ function formatIndonesianDate(d = new Date()) {
 }
 
 async function generateArticle(newsItem) {
-  const prompt = `Anda adalah jurnalis teknologi senior dan software engineer.
-Berdasarkan FAKTA BERITA NYATA berikut, tulis artikel tech explainer mendalam dan faktual dalam Bahasa Indonesia:
+  const prompt = `Anda adalah jurnalis teknologi senior dan lead software engineer.
+Tulis artikel tech explainer mendalam, berbobot, dan faktual dalam Bahasa Indonesia berdasarkan berita nyata berikut:
 
 FAKTA ASLI BERITA:
 - Judul Asli: "${newsItem.title}"
 - Sumber Media Kredibel: "${newsItem.source}"
 - URL Rujukan: "${newsItem.link}"
+- Kategori Fokus: "${newsItem.targetCategory}"
 
 PANDUAN KETAT:
-1. **ANTI-HOAX & 100% FAKTUAL**: Tulis murni berdasarkan fakta topik asli berita rujukan. Jangan mengarang fitur, klaim palsu, atau angka fiktif.
-2. **POLA JUDUL HOOK PERTANYAAN (Wajib format: "Kenapa [Subjek/Teknologi/Brand] [Dampak/Perubahan/Aksi]?")**:
+1. **ANTI-HOAX & 100% FAKTUAL**: Tulis murni berdasarkan fakta berita rujukan. Jelaskan arsitektur teknis, latar belakang, dan solusi di baliknya.
+2. **POLA JUDUL HOOK PERTANYAAN (Wajib dimulai dengan kata "Kenapa ...?")**:
    Contoh:
-   - "Kenapa Linux Kernel Versi Terbaru Mengubah Manajemen Memori?"
-   - "Kenapa Arsitektur Serverless Ini Menjadi Standar Baru Web App?"
-   - "Kenapa Celah Keamanan Ini Menuntut Patch Darurat dari Ribuan Perusahaan?"
-   - "Kenapa Framework Ini Semakin Diminati oleh Developer Modern?"
+   - "Kenapa Arsitektur Microservices Mulai Ditinggalkan oleh Startup Skala Menengah?"
+   - "Kenapa Celah Zero-Day pada Web Server Ini Menuntut Mitigasi Segera?"
+   - "Kenapa Rust Semakin Populer untuk Pengganti Modul Kritis di Backend?"
+   - "Kenapa Standar Baru Enkripsi Ini Penting Menjelang Era Komputasi Kuantum?"
 3. **SUMMARY (Cuplikan 2-3 baris fakta penting)**:
-   Mulai dengan intisari pengumuman dan dampaknya (maksimal 160 karakter).
-4. **ISI ARTIKEL (400 - 650 kata)**:
-   - MURNI TULISAN/TEKS SAJA. DILARANG MEMASUKKAN TAG GAMBAR DALAM BENTUK APAPUN (jangan sertakan markdown image ![...](...)).
-   - Format Markdown kaya: heading (##, ###), bullet points, analisis dampak, dan kutipan (blockquotes).
+   Ringkasan singkat fakta pengumuman atau inovasi (maksimal 160 karakter).
+4. **ISI ARTIKEL (400 - 600 kata)**:
+   - MURNI TULISAN/TEKS. JANGAN MEMASUKKAN TAG GAMBAR DALAM BENTUK APAPUN (Dilarang ada format ![...](...)).
+   - Format Markdown kaya: gunakan heading (##, ###), poin-poin analisis penting, dan kutipan (blockquotes).
 5. **KATEGORI**:
-   Pilih kategori yang paling sesuai dari: "Software Engineering", "Cybersecurity", "Cloud & DevOps", "Web Development", "Hardware & Chips", "Artificial Intelligence".
+   Gunakan kategori "${newsItem.targetCategory}".
 
 KEMBALIKAN HANYA JSON MURNI DENGAN STRUKTUR BERIKUT:
 {
   "title": "Kenapa ...? (judul format pertanyaan)",
   "slug": "kebab-case-judul-tanpa-tanda-tanya",
   "summary": "Ringkasan ringkas 2-3 baris fakta penting...",
-  "category": "Kategori terpilih",
+  "category": "${newsItem.targetCategory}",
   "tags": ["Tag1", "Tag2", "Tag3"],
   "readTime": "3 min read",
   "content": "Isi lengkap artikel Markdown (tanpa gambar)..."
@@ -115,10 +191,10 @@ KEMBALIKAN HANYA JSON MURNI DENGAN STRUKTUR BERIKUT:
     body: JSON.stringify({
       model: 'openai/gpt-oss-120b',
       messages: [
-        { role: 'system', content: 'You are a professional tech journalist returning strictly valid JSON without any image tags.' },
+        { role: 'system', content: 'You are an elite tech journalist returning strictly valid JSON without any image tags.' },
         { role: 'user', content: prompt }
       ],
-      temperature: 0.6,
+      temperature: 0.5,
       max_tokens: 2500
     })
   });
@@ -149,7 +225,7 @@ KEMBALIKAN HANYA JSON MURNI DENGAN STRUKTUR BERIKUT:
     parsed = JSON.parse(sanitized);
   }
 
-  // Safety clean: remove any accidental image markdown
+  // Safety clean: strip any accidental image tags
   parsed.content = parsed.content.replace(/!\[.*?\]\(.*?\)\n*/g, '');
 
   const now = new Date();
@@ -161,8 +237,8 @@ KEMBALIKAN HANYA JSON MURNI DENGAN STRUKTUR BERIKUT:
     title: parsed.title,
     summary: parsed.summary,
     content: parsed.content,
-    category: parsed.category || 'Software Engineering',
-    tags: parsed.tags || ['Tech', 'Engineering'],
+    category: newsItem.targetCategory,
+    tags: parsed.tags || ['Technology', 'Engineering'],
     date: formattedDate,
     isoDate: now.toISOString().split('T')[0],
     readTime: parsed.readTime || '3 min read',
@@ -172,10 +248,6 @@ KEMBALIKAN HANYA JSON MURNI DENGAN STRUKTUR BERIKUT:
 }
 
 async function main() {
-  console.log('Fetching diverse tech news...');
-  const news = await fetchDiverseTechNews();
-  console.log(`Found ${news.length} tech news sources.`);
-
   const blogsFile = path.resolve(__dirname, '../src/data/blogs.json');
   let existingBlogs = [];
   if (fs.existsSync(blogsFile)) {
@@ -186,30 +258,55 @@ async function main() {
     }
   }
 
-  const existingSlugs = new Set(existingBlogs.map(b => b.slug.toLowerCase()));
-
-  // Find fresh news item
-  let candidate = null;
-  for (const item of news) {
-    const simplified = item.title.toLowerCase().slice(0, 30);
-    const alreadyExists = existingBlogs.some(b =>
-      b.title.toLowerCase().includes(simplified) ||
-      (b.sourceUrl && b.sourceUrl === item.link)
-    );
-    if (!alreadyExists) {
-      candidate = item;
-      break;
-    }
-  }
-
-  if (!candidate) {
-    console.log('All tech news up to date.');
+  // 1. RULE: MAX 2 ARTICLES PUBLISHED PER DAY
+  const todayIso = new Date().toISOString().split('T')[0];
+  const countToday = existingBlogs.filter(b => b.isoDate === todayIso).length;
+  if (countToday >= 2) {
+    console.log(`Daily quota reached: already published ${countToday} articles on ${todayIso}. Skipping today.`);
     return;
   }
 
-  console.log(`Generating text-only article for: "${candidate.title}" [${candidate.source}]...`);
+  // 2. CATEGORY ROTATION: Pick the category least recently published
+  const recentCategories = existingBlogs.slice(0, 5).map(b => b.category);
+  const sortedChannels = [...TOPIC_CHANNELS].sort((a, b) => {
+    const lastIndexA = recentCategories.indexOf(a.category);
+    const lastIndexB = recentCategories.indexOf(b.category);
+    // If not present in recent, prioritize it (give high index)
+    const priorityA = lastIndexA === -1 ? 999 : lastIndexA;
+    const priorityB = lastIndexB === -1 ? 999 : lastIndexB;
+    return priorityB - priorityA;
+  });
+
+  console.log(`Targeting category: ${sortedChannels[0].category}`);
+
+  let candidate = null;
+  // Try preferred channels in order of freshness
+  for (const channel of sortedChannels) {
+    console.log(`Searching fresh news for category: ${channel.category}...`);
+    const news = await fetchNewsForCategory(channel);
+
+    for (const item of news) {
+      const alreadyHasUrl = existingBlogs.some(b => b.sourceUrl === item.link);
+      const isDuplicate = isDuplicateTopic(item.title, existingBlogs);
+
+      if (!alreadyHasUrl && !isDuplicate) {
+        candidate = item;
+        break;
+      }
+    }
+    if (candidate) break;
+  }
+
+  if (!candidate) {
+    console.log('No fresh distinct news found across all categories.');
+    return;
+  }
+
+  console.log(`Found candidate: "${candidate.title}" [${candidate.source}] (${candidate.targetCategory})`);
+  console.log('Generating structured article via Groq...');
   const article = await generateArticle(candidate);
 
+  const existingSlugs = new Set(existingBlogs.map(b => b.slug.toLowerCase()));
   if (existingSlugs.has(article.slug)) {
     article.slug = `${article.slug}-${Date.now().toString().slice(-4)}`;
   }
@@ -218,7 +315,7 @@ async function main() {
   fs.mkdirSync(path.dirname(blogsFile), { recursive: true });
   fs.writeFileSync(blogsFile, JSON.stringify(existingBlogs, null, 2), 'utf8');
 
-  console.log(`Success! Text-only tech news published: "${article.title}"`);
+  console.log(`Success! Published article #${countToday + 1} for ${todayIso}: "${article.title}"`);
 }
 
 main().catch(err => {
