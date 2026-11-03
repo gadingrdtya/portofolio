@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { generateRssFeed } from './generate-rss.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -314,6 +315,13 @@ async function main() {
   existingBlogs.unshift(article);
   fs.mkdirSync(path.dirname(blogsFile), { recursive: true });
   fs.writeFileSync(blogsFile, JSON.stringify(existingBlogs, null, 2), 'utf8');
+
+  // Automatically sync RSS feed
+  try {
+    generateRssFeed();
+  } catch (rssErr) {
+    console.error('Warning: Failed to update RSS feed:', rssErr);
+  }
 
   console.log(`Success! Published article #${countToday + 1} for ${todayIso}: "${article.title}"`);
 }

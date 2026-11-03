@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gading Raditya Pratama | Tech Dispatch &amp; Articles</title>
+    <link>https://gadingrdtya.my.id/blog</link>
+    <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
+    <language>id-ID</language>
+    <lastBuildDate>Tue, 03 Nov 2026 08:19:59 GMT</lastBuildDate>
+    <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title><![CDATA[Kenapa Solopreneur Perlu Panduan Keamanan Siber dari NIST?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-solopreneur-perlu-panduan-keamanan-siber-dari-nist</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-solopreneur-perlu-panduan-keamanan-siber-dari-nist</guid>
+      <pubDate>Tue, 03 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Cybersecurity</category>
+      <description><![CDATA[NIST rilis panduan keamanan siber khusus untuk pekerja lepas dan solopreneur, menawarkan langkah praktis melindungi data serta infrastruktur pribadi.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
+    <item>
+      <title><![CDATA[Kenapa JPMorgan Mengandalkan Teknologi Data Besar untuk Prediksi Reaksi Pasar Pasca Midterms?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-jpmorgan-mengandalkan-teknologi-data-besar-untuk-prediksi-reaksi-pasar-pasca-midterms</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-jpmorgan-mengandalkan-teknologi-data-besar-untuk-prediksi-reaksi-pasar-pasca-midterms</guid>
+      <pubDate>Tue, 03 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Software Engineering</category>
+      <description><![CDATA[JPMorgan memanfaatkan platform data besar, AI, dan arsitektur cloud‑native untuk mengantisipasi volatilitas pasar setelah pemilihan tengah masa jabatan (midterms).]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
+    <item>
+      <title><![CDATA[Kenapa Apple Gagal Menghadirkan Mac Layar Sentuh yang Revolusioner?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-apple-gagal-menghadirkan-mac-layar-sentuh-yang-revolusioner</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-apple-gagal-menghadirkan-mac-layar-sentuh-yang-revolusioner</guid>
+      <pubDate>Mon, 02 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Hardware &amp; Chips</category>
+      <description><![CDATA[Apple pernah mempertimbangkan Mac dengan layar sentuh, namun memutuskan tidak meluncurkannya, memilih fokus pada iPad dan iPhone untuk menjaga diferensiasi ekosistem.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
+    <item>
+      <title><![CDATA[Kenapa Anthropic Melarang Perlakuan Kasar pada Claude?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-anthropic-melarang-perlakuan-kasar-pada-claude</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-anthropic-melarang-perlakuan-kasar-pada-claude</guid>
+      <pubDate>Mon, 02 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Artificial Intelligence</category>
+      <description><![CDATA[Anthropic menegaskan aturan etika interaksi bukan karena model memiliki emosi, melainkan demi mencegah eksploitasi prompt injection dan degradasi kualitas output.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
+    <item>
+      <title><![CDATA[Kenapa OpenAI Memperkenalkan Strategi "The Future of the Firm" untuk Mengubah Bisnis AI?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-openai-memperkenalkan-strategi-the-future-of-the-firm-untuk-mengubah-bisnis-ai</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-openai-memperkenalkan-strategi-the-future-of-the-firm-untuk-mengubah-bisnis-ai</guid>
+      <pubDate>Sun, 01 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Artificial Intelligence</category>
+      <description><![CDATA[OpenAI mengumumkan strategi enterprise baru yang menekankan model inferensi hemat latensi, integrasi private deployment, dan SLA komputasi 99,9%.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
+  </channel>
+</rss>

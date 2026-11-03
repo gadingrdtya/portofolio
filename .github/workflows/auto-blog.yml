@@ -37,13 +37,13 @@ jobs:
 
       - name: Commit and Push New Article
         run: |
-          if [ -n "$(git status --porcelain src/data/blogs.json)" ]; then
+          if [ -n "$(git status --porcelain src/data/blogs.json public/rss.xml)" ]; then
             git config --local user.name "github-actions[bot]"
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
-            git add src/data/blogs.json
+            git add src/data/blogs.json public/rss.xml
             git commit -m "chore(blog): auto publish daily tech news [skip ci]"
             git push origin main
-            echo "New article committed and pushed successfully!"
+            echo "New article and RSS feed committed and pushed successfully!"
           else
             echo "No new article generated in this run. Everything is up to date."
           fi

@@ -1,17 +1,85 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import rehypeHighlight from 'rehype-highlight'
+import 'highlight.js/styles/github-dark.css'
 import {
   ArrowLeft,
   Calendar,
   Clock,
   Share2,
   Check,
+  Copy,
   ExternalLink,
   Tag,
   ChevronRight
 } from 'lucide-react'
 import blogsData from '../data/blogs.json'
+
+function extractCodeText(node) {
+  if (!node) return ''
+  if (typeof node === 'string') return node
+  if (Array.isArray(node)) return node.map(extractCodeText).join('')
+  if (node.props) return extractCodeText(node.props.children)
+  return ''
+}
+
+function PreBlock({ children }) {
+  const [copied, setCopied] = useState(false)
+  const codeProps = children?.props || {}
+  const className = codeProps.className || ''
+  const langMatch = /language-(\w+)/.exec(className)
+  const language = langMatch ? langMatch[1] : ''
+
+  const rawCode = extractCodeText(children).trim()
+
+  const handleCopy = () => {
+    if (!rawCode) return
+    navigator.clipboard.writeText(rawCode)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  return (
+    <div className="my-6 rounded-2xl overflow-hidden border border-light-border dark:border-border bg-[#0d1117] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.15)]">
+      {/* Terminal Bar */}
+      <div className="flex items-center justify-between px-4 py-2.5 bg-[#161b22] border-b border-[#30363d] select-none">
+        <div className="flex items-center gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+          <span className="ml-2 text-[10px] font-mono font-bold uppercase tracking-wider text-gray-400">
+            {language || 'code'}
+          </span>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleCopy}
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-mono font-semibold text-gray-300 hover:text-white hover:bg-[#21262d] transition-colors"
+          title="Salin kode ke clipboard"
+        >
+          {copied ? (
+            <>
+              <Check className="w-3.5 h-3.5 text-green-400" />
+              <span className="text-green-400">Disalin!</span>
+            </>
+          ) : (
+            <>
+              <Copy className="w-3.5 h-3.5" />
+              <span>Copy</span>
+            </>
+          )}
+        </button>
+      </div>
+
+      {/* Highlighted Code */}
+      <div className="p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-relaxed text-gray-100 bg-[#0d1117]">
+        {children}
+      </div>
+    </div>
+  )
+}
 
 export default function BlogPost() {
   const { slug } = useParams()
@@ -187,6 +255,7 @@ export default function BlogPost() {
         {/* Markdown Content */}
         <div className="prose dark:prose-invert max-w-none text-light-text-primary dark:text-text-primary leading-relaxed space-y-6">
           <ReactMarkdown
+            rehypePlugins={[rehypeHighlight]}
             components={{
               h2: ({ node, ...props }) => (
                 <h2
@@ -216,12 +285,25 @@ export default function BlogPost() {
                 />
               ),
               img: () => null,
-              code: ({ node, inline, ...props }) => (
-                <code
-                  className="px-1.5 py-0.5 rounded text-xs font-mono bg-light-bg dark:bg-background text-primary border border-light-border dark:border-border"
-                  {...props}
-                />
-              ),
+              pre: PreBlock,
+              code: ({ node, className, children, ...props }) => {
+                const isBlock = className && className.includes('hljs')
+                if (isBlock) {
+                  return (
+                    <code className={`${className} font-mono block`} {...props}>
+                      {children}
+                    </code>
+                  )
+                }
+                return (
+                  <code
+                    className="px-1.5 py-0.5 rounded text-xs font-mono bg-light-surface dark:bg-[#1a1f26] text-primary border border-light-border dark:border-border font-semibold mx-0.5"
+                    {...props}
+                  >
+                    {children}
+                  </code>
+                )
+              },
               a: ({ node, ...props }) => (
                 <a
                   className="text-primary underline underline-offset-4 font-semibold hover:text-primary-dark transition-colors"
