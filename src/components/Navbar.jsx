@@ -50,7 +50,7 @@ export default function Navbar() {
         <Link
           to="/"
           aria-label="Home Raditya.dev"
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-2 group shrink-0"
           onClick={() => {
             if (isHome) window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
@@ -63,15 +63,15 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        {/* Desktop Nav - Shown on laptop & desktop (>= 1024px) */}
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
           {navLinks.map((link) => {
             if (link.path) {
               return (
                 <Link
                   key={link.label}
                   to={link.path}
-                  className={`text-sm font-semibold tracking-wide uppercase transition-colors flex items-center gap-1 ${
+                  className={`text-xs xl:text-sm font-semibold tracking-wide uppercase transition-colors flex items-center gap-1 ${
                     isBlog
                       ? 'text-primary font-bold'
                       : 'text-light-text-secondary dark:text-text-secondary hover:text-primary dark:hover:text-primary'
@@ -87,7 +87,7 @@ export default function Navbar() {
                 key={link.label}
                 href={isHome ? link.hash : `/${link.hash}`}
                 onClick={(e) => handleNavClick(link, e)}
-                className="text-sm font-semibold tracking-wide uppercase text-light-text-secondary dark:text-text-secondary hover:text-primary dark:hover:text-primary transition-colors"
+                className="text-xs xl:text-sm font-semibold tracking-wide uppercase text-light-text-secondary dark:text-text-secondary hover:text-primary dark:hover:text-primary transition-colors"
               >
                 {link.label}
               </a>
@@ -96,13 +96,13 @@ export default function Navbar() {
         </nav>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           {/* CV Button */}
           <button
             type="button"
             onClick={openCv}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-bold uppercase rounded border border-light-border dark:border-border text-light-text-primary dark:text-text-primary hover:border-primary hover:text-primary dark:hover:text-primary transition-all"
-            title="Lihat CV"
+            title="Preview CV"
           >
             <FileText className="w-4 h-4 text-primary" />
             <span className="hidden sm:inline">Preview CV</span>
@@ -135,11 +135,11 @@ export default function Navbar() {
             </div>
           </button>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile & Tablet Menu Button */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded border border-light-border dark:border-border text-light-text-primary dark:text-text-primary"
+            className="lg:hidden p-2 rounded border border-light-border dark:border-border text-light-text-primary dark:text-text-primary hover:border-primary transition-colors"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -147,9 +147,9 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile & Tablet Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-light-border dark:border-border bg-light-surface dark:bg-surface px-4 py-4 space-y-3">
+        <div className="lg:hidden border-b border-light-border dark:border-border bg-light-surface dark:bg-surface px-4 py-4 space-y-3">
           {navLinks.map((link) => {
             if (link.path) {
               return (
