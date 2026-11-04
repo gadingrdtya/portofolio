@@ -25,7 +25,7 @@ export default function BlogPreview() {
             to="/blog"
             className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-light-text-secondary dark:text-text-secondary hover:text-primary dark:hover:text-primary transition-colors"
           >
-            <span>LIHAT SEMUA BERITA</span>
+            <span>VIEW ALL ARTICLES</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

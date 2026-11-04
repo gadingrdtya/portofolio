@@ -62,7 +62,7 @@ function PreBlock({ children }) {
           {copied ? (
             <>
               <Check className="w-3.5 h-3.5 text-green-400" />
-              <span className="text-green-400">Disalin!</span>
+              <span className="text-green-400">Copied!</span>
             </>
           ) : (
             <>
@@ -112,17 +112,17 @@ export default function BlogPost() {
     return (
       <div className="py-24 max-w-xl mx-auto px-4 text-center">
         <h1 className="text-3xl font-heading font-black text-light-text-primary dark:text-text-primary uppercase mb-3">
-          Artikel Tidak Ditemukan
+          Article Not Found
         </h1>
         <p className="text-sm text-light-text-secondary dark:text-text-secondary mb-6">
-          Artikel dengan tautan ini tidak tersedia atau mungkin telah dipindahkan.
+          The article you are looking for does not exist or has been moved.
         </p>
         <Link
           to="/blog"
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded text-sm font-bold uppercase bg-primary text-black hover:bg-primary-dark transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Kembali ke Blog</span>
+          <span>Back to All Articles</span>
         </Link>
       </div>
     )
@@ -166,7 +166,7 @@ export default function BlogPost() {
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-light-text-secondary dark:text-text-secondary hover:text-primary transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Semua Berita</span>
+            <span>All Articles</span>
           </Link>
 
           <span className="text-xs font-mono font-bold uppercase px-3 py-1 rounded-full border border-light-border dark:border-border bg-light-surface dark:bg-surface text-light-text-secondary dark:text-text-secondary">
@@ -225,17 +225,17 @@ export default function BlogPost() {
                 type="button"
                 onClick={handleCopyLink}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary transition-all"
-                title="Salin Tautan Artikel"
+                title="Copy Article Link"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-green-500" /> : <Share2 className="w-3.5 h-3.5" />}
-                <span>{copied ? 'Tersalin' : 'Bagikan'}</span>
+                <span>{copied ? 'Copied' : 'Share'}</span>
               </button>
 
               <button
                 type="button"
                 onClick={shareTwitter}
                 className="px-3 py-1.5 text-xs font-mono font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary transition-all"
-                title="Bagikan ke X"
+                title="Share on X"
               >
                 X
               </button>
@@ -244,7 +244,7 @@ export default function BlogPost() {
                 type="button"
                 onClick={shareLinkedIn}
                 className="px-3 py-1.5 text-xs font-mono font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary transition-all"
-                title="Bagikan ke LinkedIn"
+                title="Share on LinkedIn"
               >
                 in
               </button>
@@ -340,7 +340,7 @@ export default function BlogPost() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-light-text-secondary dark:text-text-secondary hover:text-primary transition-colors"
               >
-                <span>Sumber Kredibel: {blog.sourceName}</span>
+                <span>Verified Source: {blog.sourceName}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}
@@ -350,7 +350,7 @@ export default function BlogPost() {
           {relatedPosts.length > 0 && (
             <div className="mt-12 pt-8 border-t border-light-border/60 dark:border-border/60">
               <h2 className="text-lg sm:text-xl font-heading font-black tracking-tight text-light-text-primary dark:text-text-primary uppercase mb-6">
-                Artikel Terkait Lainnya
+                Related Articles
               </h2>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

@@ -46,7 +46,7 @@ export default function BlogList() {
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono font-bold uppercase tracking-wider text-light-text-secondary dark:text-text-secondary hover:text-primary transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Kembali ke Portofolio</span>
+            <span>Back to Portfolio</span>
           </Link>
         </div>
 
@@ -59,7 +59,7 @@ export default function BlogList() {
             TECH ARTICLES & EXPLAINERS
           </h1>
           <p className="text-sm sm:text-base text-light-text-secondary dark:text-text-secondary mt-3 max-w-2xl leading-relaxed">
-            Berita dan analisis mendalam seputar perkembangan frontier AI, model LLM terbaru, dan arsitektur software masa kini yang dikurasi dari media teknologi terkemuka dunia.
+            Curated tech dispatches, architecture breakdowns, software engineering insights, and hardware developments from credible global media.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function BlogList() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari artikel atau topik berita..."
+              placeholder="Search articles or topics..."
               className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm rounded-lg border border-light-border dark:border-border bg-light-surface dark:bg-surface text-light-text-primary dark:text-text-primary placeholder-light-text-secondary dark:placeholder-text-secondary focus:outline-none focus:border-primary transition-colors"
             />
             {searchQuery && (
@@ -152,9 +152,9 @@ export default function BlogList() {
                 <button
                   type="button"
                   onClick={() => setVisibleCount((prev) => prev + 6)}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-light-surface dark:bg-surface border border-light-border dark:border-border text-light-text-primary dark:text-text-primary hover:border-primary hover:text-primary transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] active:translate-x-0.5 active:translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-light-surface dark:bg-surface border border-light-border dark:border-border text-light-text-primary dark:text-text-primary hover:border-primary hover:text-primary transition-all active:translate-x-0.5 active:translate-y-0.5"
                 >
-                  <span>Muat Lebih Banyak Artikel ({filteredBlogs.length - visibleCount} tersisa)</span>
+                  <span>Load More Articles ({filteredBlogs.length - visibleCount} remaining)</span>
                 </button>
               </div>
             )}
@@ -163,10 +163,10 @@ export default function BlogList() {
           <div className="text-center py-16 px-4 rounded-2xl border border-dashed border-light-border dark:border-border">
             <Newspaper className="w-10 h-10 text-light-text-secondary dark:text-text-secondary mx-auto mb-3 opacity-60" />
             <h3 className="text-base font-bold text-light-text-primary dark:text-text-primary uppercase">
-              Tidak ada artikel yang cocok
+              No articles found
             </h3>
             <p className="text-xs text-light-text-secondary dark:text-text-secondary mt-1">
-              Coba kata kunci pencarian lain atau pilih kategori "All".
+              Try a different search query or select category "All".
             </p>
           </div>
         )}
