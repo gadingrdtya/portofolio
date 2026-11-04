@@ -53,6 +53,36 @@ const TOPIC_CHANNELS = [
   }
 ];
 
+const BROWSER_HEADERS = {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+  'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+  'Accept-Language': 'en-US,en;q=0.9'
+};
+
+// Direct high-authority RSS feeds as reliable fallbacks
+const FALLBACK_FEEDS = {
+  'Software Engineering': {
+    url: 'https://github.blog/feed/',
+    source: 'GitHub Engineering'
+  },
+  'Cybersecurity': {
+    url: 'https://feeds.feedburner.com/TheHackersNews',
+    source: 'The Hacker News'
+  },
+  'Cloud & DevOps': {
+    url: 'https://feeds.arstechnica.com/arstechnica/technology-lab',
+    source: 'Ars Technica'
+  },
+  'Artificial Intelligence': {
+    url: 'https://techcrunch.com/category/artificial-intelligence/feed/',
+    source: 'TechCrunch'
+  },
+  'Hardware & Chips': {
+    url: 'https://feeds.arstechnica.com/arstechnica/gadgets',
+    source: 'Ars Technica'
+  }
+};
+
 // Negative blacklist: filter out crime, death, tragic accidents, lawsuits, sensational gossip
 const FORBIDDEN_WORDS = [
   'death', 'dead', 'died', 'kill', 'killer', 'killing', 'murder', 'suicide',
@@ -87,7 +117,8 @@ function isDuplicateTopic(newTitle, existingArticles) {
   if (newKeywords.size === 0) return false;
 
   for (const art of existingArticles) {
-    const existingKeywords = extractKeywords(art.title + ' ' + (art.summary || ''));
+    // Compare new title against existing titles only to prevent false positives from summaries
+    const existingKeywords = extractKeywords(art.title);
     let sharedCount = 0;
     for (const kw of newKeywords) {
       if (existingKeywords.has(kw)) sharedCount++;
@@ -100,12 +131,7 @@ function isDuplicateTopic(newTitle, existingArticles) {
   return false;
 }
 
-async function fetchNewsForCategory(channel) {
-  const encodedQuery = encodeURIComponent(channel.query);
-  const url = `https://news.google.com/rss/search?q=${encodedQuery}&hl=en-US&gl=US&ceid=US:en`;
-  const res = await fetch(url);
-  const xml = await res.text();
-
+function parseItemsFromXml(xml, defaultSource, targetCategory) {
   const items = [];
   const itemMatches = xml.split('<item>').slice(1);
 
@@ -116,7 +142,7 @@ async function fetchNewsForCategory(channel) {
 
     if (titleMatch) {
       let rawTitle = titleMatch[1].replace(/&amp;/g, '&').replace(/&quot;/g, '"');
-      let source = 'Tech Media';
+      let source = defaultSource || 'Tech Media';
       if (rawTitle.includes(' - ')) {
         const parts = rawTitle.split(' - ');
         source = parts.pop().trim();
@@ -130,11 +156,44 @@ async function fetchNewsForCategory(channel) {
           source,
           link: linkMatch ? linkMatch[1] : '',
           pubDate: dateMatch ? dateMatch[1] : new Date().toISOString(),
-          targetCategory: channel.category
+          targetCategory
         });
       }
     }
   }
+  return items;
+}
+
+async function fetchNewsForCategory(channel) {
+  const encodedQuery = encodeURIComponent(channel.query);
+  const url = `https://news.google.com/rss/search?q=${encodedQuery}&hl=en-US&gl=US&ceid=US:en`;
+  let items = [];
+
+  try {
+    const res = await fetch(url, { headers: BROWSER_HEADERS });
+    if (res.ok) {
+      const xml = await res.text();
+      items = parseItemsFromXml(xml, 'Tech Media', channel.category);
+    }
+  } catch (err) {
+    console.warn(`Warning: Google News fetch failed for ${channel.category}: ${err.message}`);
+  }
+
+  // If Google News was rate-limited or empty, use high-authority direct RSS fallback
+  if (items.length === 0 && FALLBACK_FEEDS[channel.category]) {
+    const fallback = FALLBACK_FEEDS[channel.category];
+    console.log(`Using fallback direct RSS feed for ${channel.category}: ${fallback.url}`);
+    try {
+      const resFallback = await fetch(fallback.url, { headers: BROWSER_HEADERS });
+      if (resFallback.ok) {
+        const xmlFallback = await resFallback.text();
+        items = parseItemsFromXml(xmlFallback, fallback.source, channel.category);
+      }
+    } catch (fbErr) {
+      console.warn(`Warning: Direct RSS fallback failed for ${channel.category}: ${fbErr.message}`);
+    }
+  }
+
   return items;
 }
 
