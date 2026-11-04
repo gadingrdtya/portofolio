@@ -19,8 +19,17 @@ export function ThemeProvider({ children }) {
     localStorage.setItem('theme', theme)
   }, [theme])
 
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'))
+  const toggleTheme = (e) => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark'
+
+    // Use modern View Transitions API if supported for silky-smooth global cross-fade
+    if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.startViewTransition(() => {
+        setTheme(nextTheme)
+      })
+    } else {
+      setTheme(nextTheme)
+    }
   }
 
   return (

@@ -112,16 +112,27 @@ export default function Navbar() {
           {/* Theme Toggle */}
           <button
             type="button"
-            onClick={toggleTheme}
+            onClick={(e) => toggleTheme(e)}
             aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            className="p-2 rounded border border-light-border dark:border-border text-light-text-primary dark:text-text-primary hover:border-primary transition-colors"
+            className="relative p-2 rounded border border-light-border dark:border-border text-light-text-primary dark:text-text-primary hover:border-primary transition-colors overflow-hidden"
             title={`Mode: ${theme === 'dark' ? 'Dark' : 'Light'}`}
           >
-            {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-primary animate-spin-slow" />
-            ) : (
-              <Moon className="w-4 h-4 text-primary" />
-            )}
+            <div className="relative w-4 h-4">
+              <Sun
+                className={`w-4 h-4 text-primary absolute inset-0 transition-all duration-300 transform ${
+                  theme === 'dark'
+                    ? 'rotate-0 scale-100 opacity-100'
+                    : '-rotate-90 scale-0 opacity-0'
+                }`}
+              />
+              <Moon
+                className={`w-4 h-4 text-primary absolute inset-0 transition-all duration-300 transform ${
+                  theme === 'dark'
+                    ? 'rotate-90 scale-0 opacity-0'
+                    : 'rotate-0 scale-100 opacity-100'
+                }`}
+              />
+            </div>
           </button>
 
           {/* Mobile Menu Button */}

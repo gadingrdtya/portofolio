@@ -10,7 +10,7 @@ const BlogPost = lazy(() => import('./pages/BlogPost'))
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-light-bg dark:bg-background text-light-text-primary dark:text-text-primary transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-light-bg dark:bg-background text-light-text-primary dark:text-text-primary transition-colors duration-300">
       <Navbar />
       <main className="flex-1">
         <Suspense
