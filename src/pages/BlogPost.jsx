@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight'
 import 'highlight.js/styles/github-dark.css'
 import {
@@ -255,6 +256,7 @@ export default function BlogPost() {
         {/* Markdown Content */}
         <div className="prose dark:prose-invert max-w-none text-light-text-primary dark:text-text-primary leading-relaxed space-y-6">
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeHighlight]}
             components={{
               h2: ({ node, ...props }) => (
@@ -283,6 +285,26 @@ export default function BlogPost() {
                   className="border-l-4 border-primary pl-4 py-2.5 my-4 italic bg-light-surface/80 dark:bg-surface/80 rounded-r text-light-text-primary dark:text-text-primary text-sm sm:text-base"
                   {...props}
                 />
+              ),
+              table: ({ node, ...props }) => (
+                <div className="my-6 w-full overflow-x-auto rounded-xl border border-light-border dark:border-border bg-light-surface/40 dark:bg-surface/40 shadow-sm">
+                  <table className="w-full text-left text-xs sm:text-sm font-mono border-collapse" {...props} />
+                </div>
+              ),
+              thead: ({ node, ...props }) => (
+                <thead className="bg-light-surface dark:bg-[#161b22] border-b border-light-border dark:border-border font-bold uppercase tracking-wider text-light-text-primary dark:text-text-primary" {...props} />
+              ),
+              tbody: ({ node, ...props }) => (
+                <tbody className="divide-y divide-light-border/60 dark:divide-border/60" {...props} />
+              ),
+              tr: ({ node, ...props }) => (
+                <tr className="hover:bg-primary/5 dark:hover:bg-primary/10 transition-colors" {...props} />
+              ),
+              th: ({ node, ...props }) => (
+                <th className="px-4 py-3 font-heading font-black text-xs text-primary uppercase whitespace-nowrap" {...props} />
+              ),
+              td: ({ node, ...props }) => (
+                <td className="px-4 py-3 text-light-text-secondary dark:text-text-secondary leading-relaxed" {...props} />
               ),
               img: () => null,
               pre: PreBlock,

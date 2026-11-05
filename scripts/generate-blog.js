@@ -33,23 +33,23 @@ if (!GROQ_API_KEY) {
 const TOPIC_CHANNELS = [
   {
     category: 'Software Engineering',
-    query: '"software engineering" OR "web development" OR "TypeScript" OR "React" OR "Next.js" OR "Rust language" OR "Python framework"'
+    query: '("software engineering" OR "web development" OR "TypeScript" OR "React" OR "Next.js" OR "Rust language" OR "Python framework") -stock -stocks -shares'
   },
   {
     category: 'Cybersecurity',
-    query: '"cybersecurity" OR "zero-day vulnerability" OR "data encryption" OR "API security" OR "security patch"'
+    query: '("cybersecurity" OR "zero-day vulnerability" OR "data encryption" OR "API security" OR "security patch") -stock -stocks -shares'
   },
   {
     category: 'Cloud & DevOps',
-    query: '"cloud computing" OR "Kubernetes" OR "Docker container" OR "AWS architecture" OR "microservices" OR "serverless"'
+    query: '("cloud computing" OR "Kubernetes" OR "Docker container" OR "AWS architecture" OR "microservices" OR "serverless") -stock -stocks -shares'
   },
   {
     category: 'Artificial Intelligence',
-    query: '"AI model" OR "LLM benchmark" OR "open source AI" OR "machine learning architecture" OR "neural network"'
+    query: '("AI model" OR "LLM benchmark" OR "open source AI" OR "machine learning architecture" OR "neural network") -stock -stocks -shares'
   },
   {
     category: 'Hardware & Chips',
-    query: '"semiconductor" OR "RISC-V" OR "TSMC process" OR "GPU architecture" OR "quantum processor"'
+    query: '("RISC-V" OR "TSMC 3nm" OR "TSMC 2nm" OR "GPU architecture" OR "quantum processor" OR "semiconductor engineering" OR "chip packaging") -stock -stocks -shares -buy'
   }
 ];
 
@@ -83,13 +83,15 @@ const FALLBACK_FEEDS = {
   }
 };
 
-// Negative blacklist: filter out crime, death, tragic accidents, lawsuits, sensational gossip
+// Negative blacklist: filter out crime, death, tragic accidents, lawsuits, sensational gossip, stock tips/financial advice
 const FORBIDDEN_WORDS = [
   'death', 'dead', 'died', 'kill', 'killer', 'killing', 'murder', 'suicide',
   'seizure', 'fatal', 'fatality', 'victim', 'tragedy', 'mourn', 'grief',
   'lawsuit', 'sue', 'sued', 'suing', 'court', 'judge', 'trial', 'sentenced', 'prison',
   'crime', 'criminal', 'arrest', 'arrested', 'fraud', 'scam', 'bribe', 'corruption',
-  'layoff', 'fired', 'fired employee', 'controversy', 'scandal'
+  'layoff', 'fired', 'fired employee', 'controversy', 'scandal',
+  'stock to buy', 'stocks to buy', 'buy right now', 'sell-off', 'target price', 'wall street',
+  'skyrocket once again', 'best chip stocks', 'shares surge', 'shares plunge', 'nasdaq'
 ];
 
 function isForbiddenContent(text) {
@@ -216,7 +218,7 @@ FAKTA ASLI BERITA:
 - Kategori Fokus: "${newsItem.targetCategory}"
 
 PANDUAN KETAT:
-1. **ANTI-HOAX & 100% FAKTUAL**: Tulis murni berdasarkan fakta berita rujukan. Jelaskan arsitektur teknis, latar belakang, dan solusi di baliknya.
+1. **ANTI-HOAX, MURNI TEKNIK & 100% FAKTUAL**: Tulis dari sudut pandang rekayasa perangkat lunak, sistem komputasi, atau arsitektur hardware. DILARANG membahas rekomendasi investasi, saham, harga saham, atau nasihat keuangan.
 2. **POLA JUDUL HOOK PERTANYAAN (Wajib dimulai dengan kata "Kenapa ...?")**:
    Contoh:
    - "Kenapa Arsitektur Microservices Mulai Ditinggalkan oleh Startup Skala Menengah?"
