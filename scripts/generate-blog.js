@@ -33,7 +33,7 @@ if (!GROQ_API_KEY) {
 const TOPIC_CHANNELS = [
   {
     category: 'Software Engineering',
-    query: '("software engineering" OR "web development" OR "TypeScript" OR "React" OR "Next.js" OR "Rust language" OR "Python framework") -stock -stocks -shares'
+    query: '("software engineering" OR "web development" OR "TypeScript" OR "ReactJS" OR "React.js" OR "Next.js" OR "Rust language" OR "Python framework") -stock -stocks -shares'
   },
   {
     category: 'Cybersecurity',
