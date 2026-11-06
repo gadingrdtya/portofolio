@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Fri, 06 Nov 2026 01:17:36 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 11:17:30 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Proses Upgrade Kubernetes Memerlukan 13 Langkah dalam 75 Menit?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-proses-upgrade-kubernetes-memerlukan-13-langkah-dalam-75-menit</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-proses-upgrade-kubernetes-memerlukan-13-langkah-dalam-75-menit</guid>
+      <pubDate>Fri, 06 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Cloud &amp; DevOps</category>
+      <description><![CDATA[Tech Insider mengungkap bahwa upgrade Kubernetes versi terbaru melibatkan 13 langkah kritis dan rata‑rata selesai dalam 75 menit, menyoroti tantangan operasional dan otomatisasi.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa GPT‑6 Cyber Menjadi Lompatan Besar dalam Agen Keamanan Siber yang Ter‑align?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-gpt-6-cyber-menjadi-lompatan-besar-dalam-agen-keamanan-siber-yang-ter-align</link>
