@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Fri, 06 Nov 2026 11:17:30 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 01:17:24 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Model AI Terbaik Meta Sekarang Dilatih pada Model yang Digunakan Mayoritas Pengguna?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-model-ai-terbaik-meta-sekarang-dilatih-pada-model-yang-digunakan-mayoritas-pengguna</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-model-ai-terbaik-meta-sekarang-dilatih-pada-model-yang-digunakan-mayoritas-pengguna</guid>
+      <pubDate>Sat, 07 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Artificial Intelligence</category>
+      <description><![CDATA[Meta mengalihkan pelatihan model AI terkuatnya ke varian yang paling banyak diakses publik, memanfaatkan infrastruktur GPU terdistribusi dan teknik fine‑tuning berbasis data pengguna.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Proses Upgrade Kubernetes Memerlukan 13 Langkah dalam 75 Menit?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-proses-upgrade-kubernetes-memerlukan-13-langkah-dalam-75-menit</link>
