@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Sat, 07 Nov 2026 01:17:24 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 11:19:36 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa TEE Berbasis RISC‑V di CPU AMD Zen 6 Menjanjikan Revolusi Keamanan?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-tee-berbasis-riscv-di-cpu-amd-zen-6-menjanjikan-revolusi-keamanan</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-tee-berbasis-riscv-di-cpu-amd-zen-6-menjanjikan-revolusi-keamanan</guid>
+      <pubDate>Sat, 07 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Hardware &amp; Chips</category>
+      <description><![CDATA[Phoronix melaporkan TEE berbasis RISC‑V yang diintegrasikan ke CPU AMD Zen 6, memberi isolasi perangkat lunak tingkat tinggi dengan jejak hardware terbuka.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Model AI Terbaik Meta Sekarang Dilatih pada Model yang Digunakan Mayoritas Pengguna?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-model-ai-terbaik-meta-sekarang-dilatih-pada-model-yang-digunakan-mayoritas-pengguna</link>
