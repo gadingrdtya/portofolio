@@ -29,27 +29,28 @@ if (!GROQ_API_KEY) {
   process.exit(1);
 }
 
-// Multi-category topic pools to ensure balanced variety
+// Multi-category topic pools tailored 100% to Gading's tech stack:
+// React, Next.js, Node.js, TypeScript, PostgreSQL, Mobile/Flutter, Cloud/DevOps, Modern Dev Tools
 const TOPIC_CHANNELS = [
   {
-    category: 'Software Engineering',
-    query: '("software engineering" OR "web development" OR "TypeScript" OR "ReactJS" OR "React.js" OR "Next.js" OR "Rust language" OR "Python framework") -stock -stocks -shares'
+    category: 'Frontend Development',
+    query: '("React 19" OR "Next.js" OR "TypeScript" OR "Tailwind CSS" OR "Vite" OR "Frontend architecture" OR "Web performance") -stock -stocks -shares'
   },
   {
-    category: 'Cybersecurity',
-    query: '("cybersecurity" OR "zero-day vulnerability" OR "data encryption" OR "API security" OR "security patch") -stock -stocks -shares'
+    category: 'Backend & Database',
+    query: '("Node.js" OR "Express.js" OR "PostgreSQL" OR "MongoDB" OR "REST API" OR "Prisma ORM" OR "Redis cache" OR "Database indexing") -stock -stocks -shares'
   },
   {
-    category: 'Cloud & DevOps',
-    query: '("cloud computing" OR "Kubernetes" OR "Docker container" OR "AWS architecture" OR "microservices" OR "serverless") -stock -stocks -shares'
+    category: 'DevOps & Cloud',
+    query: '("Docker container" OR "CI/CD GitHub Actions" OR "Vercel deployment" OR "Cloudflare Workers" OR "Serverless API" OR "Supabase") -stock -stocks -shares'
   },
   {
-    category: 'Artificial Intelligence',
-    query: '("AI model" OR "LLM benchmark" OR "open source AI" OR "machine learning architecture" OR "neural network") -stock -stocks -shares'
+    category: 'AI & Developer Tools',
+    query: '("Claude Code" OR "Cursor editor" OR "GitHub Copilot" OR "LLM API integration" OR "TensorFlow Lite" OR "Developer productivity") -stock -stocks -shares'
   },
   {
-    category: 'Hardware & Chips',
-    query: '("RISC-V" OR "TSMC 3nm" OR "TSMC 2nm" OR "GPU architecture" OR "quantum processor" OR "semiconductor engineering" OR "chip packaging") -stock -stocks -shares -buy'
+    category: 'Architecture & Security',
+    query: '("Web security" OR "JWT authentication" OR "OAuth 2.0" OR "API rate limiting" OR "Clean Architecture" OR "Microservices vs Monolith") -stock -stocks -shares'
   }
 ];
 
@@ -61,29 +62,29 @@ const BROWSER_HEADERS = {
 
 // Direct high-authority RSS feeds as reliable fallbacks
 const FALLBACK_FEEDS = {
-  'Software Engineering': {
+  'Frontend Development': {
+    url: 'https://dev.to/feed/tag/react',
+    source: 'Dev.to Community'
+  },
+  'Backend & Database': {
+    url: 'https://dev.to/feed/tag/node',
+    source: 'Dev.to Community'
+  },
+  'DevOps & Cloud': {
     url: 'https://github.blog/feed/',
     source: 'GitHub Engineering'
   },
-  'Cybersecurity': {
-    url: 'https://feeds.feedburner.com/TheHackersNews',
-    source: 'The Hacker News'
-  },
-  'Cloud & DevOps': {
-    url: 'https://feeds.arstechnica.com/arstechnica/technology-lab',
-    source: 'Ars Technica'
-  },
-  'Artificial Intelligence': {
+  'AI & Developer Tools': {
     url: 'https://techcrunch.com/category/artificial-intelligence/feed/',
     source: 'TechCrunch'
   },
-  'Hardware & Chips': {
-    url: 'https://feeds.arstechnica.com/arstechnica/gadgets',
-    source: 'Ars Technica'
+  'Architecture & Security': {
+    url: 'https://feeds.feedburner.com/TheHackersNews',
+    source: 'The Hacker News'
   }
 };
 
-// Negative blacklist: filter out crime, death, tragic accidents, lawsuits, sensational gossip, stock tips/financial advice
+// Negative blacklist: filter out crime, death, tragic accidents, lawsuits, sensational gossip, stock tips/financial advice, regional non-tech
 const FORBIDDEN_WORDS = [
   'death', 'dead', 'died', 'kill', 'killer', 'killing', 'murder', 'suicide',
   'seizure', 'fatal', 'fatality', 'victim', 'tragedy', 'mourn', 'grief',
@@ -91,7 +92,8 @@ const FORBIDDEN_WORDS = [
   'crime', 'criminal', 'arrest', 'arrested', 'fraud', 'scam', 'bribe', 'corruption',
   'layoff', 'fired', 'fired employee', 'controversy', 'scandal',
   'stock to buy', 'stocks to buy', 'buy right now', 'sell-off', 'target price', 'wall street',
-  'skyrocket once again', 'best chip stocks', 'shares surge', 'shares plunge', 'nasdaq'
+  'skyrocket once again', 'best chip stocks', 'shares surge', 'shares plunge', 'nasdaq',
+  'school district', 'education agency', 'voucher', 'superintendent', 'police'
 ];
 
 function isForbiddenContent(text) {
@@ -208,28 +210,29 @@ function formatIndonesianDate(d = new Date()) {
 }
 
 async function generateArticle(newsItem) {
-  const prompt = `Anda adalah jurnalis teknologi senior dan lead software engineer.
-Tulis artikel tech explainer mendalam, berbobot, dan faktual dalam Bahasa Indonesia berdasarkan berita nyata berikut:
+  const prompt = `Anda adalah senior fullstack web engineer dan tech writer berpengalaman di industri software modern.
+Tulis artikel tech explainer mendalam, praktis, berbobot, dan sangat relevan untuk software engineer/developer dalam Bahasa Indonesia berdasarkan berita nyata berikut:
 
 FAKTA ASLI BERITA:
 - Judul Asli: "${newsItem.title}"
-- Sumber Media Kredibel: "${newsItem.source}"
+- Sumber Media: "${newsItem.source}"
 - URL Rujukan: "${newsItem.link}"
 - Kategori Fokus: "${newsItem.targetCategory}"
 
 PANDUAN KETAT:
-1. **ANTI-HOAX, MURNI TEKNIK & 100% FAKTUAL**: Tulis dari sudut pandang rekayasa perangkat lunak, sistem komputasi, atau arsitektur hardware. DILARANG membahas rekomendasi investasi, saham, harga saham, atau nasihat keuangan.
-2. **POLA JUDUL HOOK PERTANYAAN (Wajib dimulai dengan kata "Kenapa ...?")**:
+1. **RELEVANSI DEVELOPER & PRAKTISI**: Tulis artikel dari kacamata software engineer praktisi (web dev, API backend, performance, developer tooling). Bahas trade-off arsitektur, implementasi nyata, performa, developer experience (DX), atau best practices. DILARANG membahas rekomendasi investasi/saham, politik daerah, atau hardware industri pabrik yang tidak relevan dengan web development.
+2. **POLA JUDUL MENGGIGIT & RELEVAN**: Buat judul pertanyaan format hook yang memicu rasa ingin tahu developer profesional:
    Contoh:
-   - "Kenapa Arsitektur Microservices Mulai Ditinggalkan oleh Startup Skala Menengah?"
-   - "Kenapa Celah Zero-Day pada Web Server Ini Menuntut Mitigasi Segera?"
-   - "Kenapa Rust Semakin Populer untuk Pengganti Modul Kritis di Backend?"
-   - "Kenapa Standar Baru Enkripsi Ini Penting Menjelang Era Komputasi Kuantum?"
+   - "Kenapa React 19 Memilih React Compiler Ketimbang Manual useMemo?"
+   - "Kenapa Arsitektur Server Components (RSC) Mengubah Cara Kita Mengelola State?"
+   - "Kenapa PostgreSQL Tetap Menjadi Pilihan Utama Backend Skala Besar di 2026?"
+   - "Kenapa Developer Tools Berbasis AI Menggeser Standar Produktivitas Engineering?"
+   - "Kenapa JWT Authentication Masih Rawan Jika Salah Mengelola Refresh Token?"
 3. **SUMMARY (Cuplikan 2-3 baris fakta penting)**:
    Ringkasan singkat fakta pengumuman atau inovasi (maksimal 160 karakter).
-4. **ISI ARTIKEL (400 - 600 kata)**:
+4. **ISI ARTIKEL (450 - 650 kata)**:
    - MURNI TULISAN/TEKS. JANGAN MEMASUKKAN TAG GAMBAR DALAM BENTUK APAPUN (Dilarang ada format ![...](...)).
-   - Format Markdown kaya: gunakan heading (##, ###), poin-poin analisis penting, dan kutipan (blockquotes).
+   - Format Markdown kaya: gunakan heading (##, ###), bullet points analisis mendalam, blockquotes kutipan, dan jika relevan berikan blok kode singkat atau tabel Markdown perbandingan teknis.
 5. **KATEGORI**:
    Gunakan kategori "${newsItem.targetCategory}".
 

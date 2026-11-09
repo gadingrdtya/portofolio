@@ -5,151 +5,61 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Mon, 09 Nov 2026 01:17:26 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 03:12:03 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
     <item>
-      <title><![CDATA[Kenapa Alternatif Kubernetes Dashboard Gratis Lebih Menarik Daripada Versi Berbayar $25?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-alternatif-kubernetes-dashboard-gratis-lebih-menarik-daripada-versi-berbayar-25</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-alternatif-kubernetes-dashboard-gratis-lebih-menarik-daripada-versi-berbayar-25</guid>
-      <pubDate>Mon, 09 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Cloud &amp; DevOps</category>
-      <description><![CDATA[Tech Insider melaporkan perbandingan alternatif Kubernetes Dashboard: solusi $0 seperti K9s, Octant, dan Lens vs opsi berbayar $25 yang menawarkan integrasi enterprise.]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa Keamanan Siber Perangkat Medis Menjadi Prioritas Utama di Era Digital?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-keamanan-siber-perangkat-medis-menjadi-prioritas-utama-di-era-digital</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-keamanan-siber-perangkat-medis-menjadi-prioritas-utama-di-era-digital</guid>
-      <pubDate>Sun, 08 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Cybersecurity</category>
-      <description><![CDATA[FDA mengumumkan pedoman baru untuk mengamankan perangkat medis yang terhubung, menyoroti risiko siber pada firmware, jaringan, dan data pasien.]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa Pengembang Beralih ke Alternatif Self-Hosted LangSmith untuk Agen TypeScript?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-pengembang-beralih-ke-alternatif-self-hosted-langsmith-untuk-agen-typescript</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-pengembang-beralih-ke-alternatif-self-hosted-langsmith-untuk-agen-typescript</guid>
-      <pubDate>Sun, 08 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Software Engineering</category>
-      <description><![CDATA[Empat alat self-hosted diuji pada agen TypeScript untuk menilai performa, integrasi, dan biaya dibanding LangSmith.]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa TEE Berbasis RISC‑V di CPU AMD Zen 6 Menjanjikan Revolusi Keamanan?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-tee-berbasis-riscv-di-cpu-amd-zen-6-menjanjikan-revolusi-keamanan</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-tee-berbasis-riscv-di-cpu-amd-zen-6-menjanjikan-revolusi-keamanan</guid>
-      <pubDate>Sat, 07 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Hardware &amp; Chips</category>
-      <description><![CDATA[Phoronix melaporkan TEE berbasis RISC‑V yang diintegrasikan ke CPU AMD Zen 6, memberi isolasi perangkat lunak tingkat tinggi dengan jejak hardware terbuka.]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa Model AI Terbaik Meta Sekarang Dilatih pada Model yang Digunakan Mayoritas Pengguna?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-model-ai-terbaik-meta-sekarang-dilatih-pada-model-yang-digunakan-mayoritas-pengguna</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-model-ai-terbaik-meta-sekarang-dilatih-pada-model-yang-digunakan-mayoritas-pengguna</guid>
-      <pubDate>Sat, 07 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Artificial Intelligence</category>
-      <description><![CDATA[Meta mengalihkan pelatihan model AI terkuatnya ke varian yang paling banyak diakses publik, memanfaatkan infrastruktur GPU terdistribusi dan teknik fine‑tuning berbasis data pengguna.]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa Proses Upgrade Kubernetes Memerlukan 13 Langkah dalam 75 Menit?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-proses-upgrade-kubernetes-memerlukan-13-langkah-dalam-75-menit</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-proses-upgrade-kubernetes-memerlukan-13-langkah-dalam-75-menit</guid>
+      <title><![CDATA[Kenapa React 19 Menggantikan useMemo dan useCallback Lewat React Compiler?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-react-19-menggantikan-usememo-dan-usecallback-lewat-react-compiler</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-react-19-menggantikan-usememo-dan-usecallback-lewat-react-compiler</guid>
       <pubDate>Fri, 06 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Cloud &amp; DevOps</category>
-      <description><![CDATA[Tech Insider mengungkap bahwa upgrade Kubernetes versi terbaru melibatkan 13 langkah kritis dan rata‑rata selesai dalam 75 menit, menyoroti tantangan operasional dan otomatisasi.]]></description>
+      <category>Frontend Development</category>
+      <description><![CDATA[React 19 memperkenalkan React Compiler yang mengotomatisasi memoization komponen dan hooks, memangkas boilerplate tanpa mengorbankan performa render.]]></description>
       <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
     </item>
     <item>
-      <title><![CDATA[Kenapa GPT‑6 Cyber Menjadi Lompatan Besar dalam Agen Keamanan Siber yang Ter‑align?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-gpt-6-cyber-menjadi-lompatan-besar-dalam-agen-keamanan-siber-yang-ter-align</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-gpt-6-cyber-menjadi-lompatan-besar-dalam-agen-keamanan-siber-yang-ter-align</guid>
-      <pubDate>Fri, 06 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Cybersecurity</category>
-      <description><![CDATA[OpenAI mengumumkan GPT‑6 Cyber, model AI generatif khusus agen keamanan siber ter‑align, menggabungkan RL, verifikasi formal, dan akselerator hardware.]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa Kecerdasan Buatan Menjadi Kunci Transformasi Pendidikan Rekayasa Perangkat Lunak?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-kecerdasan-buatan-menjadi-kunci-transformasi-pendidikan-rekayasa-perangkat-lunak</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-kecerdasan-buatan-menjadi-kunci-transformasi-pendidikan-rekayasa-perangkat-lunak</guid>
+      <title><![CDATA[Kenapa PostgreSQL dan pgvector Semakin Unggul Dibandingkan Dedicated Vector Database?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-postgresql-dan-pgvector-semakin-unggul-dibandingkan-dedicated-vector-database</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-postgresql-dan-pgvector-semakin-unggul-dibandingkan-dedicated-vector-database</guid>
       <pubDate>Thu, 05 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Software Engineering</category>
-      <description><![CDATA[Augusta University meluncurkan kurikulum AI untuk mempercepat pembelajaran rekayasa perangkat lunak, mengintegrasikan alat generatif, simulasi, dan evaluasi otomatis.]]></description>
+      <category>Backend &amp; Database</category>
+      <description><![CDATA[Ekosistem backend beralih ke PostgreSQL + pgvector untuk beban kerja AI Retrieval-Augmented Generation (RAG) demi konsistensi data ACID dan efisiensi biaya.]]></description>
       <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
     </item>
     <item>
-      <title><![CDATA[Kenapa Infineon Memperkenalkan Keluarga Mikrokomputer RISC‑V Pertamanya?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-infineon-memperkenalkan-keluarga-mikrokomputer-risc-v-pertamanya</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-infineon-memperkenalkan-keluarga-mikrokomputer-risc-v-pertamanya</guid>
-      <pubDate>Thu, 05 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Hardware &amp; Chips</category>
-      <description><![CDATA[Infineon meluncurkan keluarga mikrokomputer RISC‑V pertama, menargetkan otomotif dan industri dengan arsitektur terbuka, keamanan terintegrasi, dan performa tinggi.]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa MANTIS AI Model Menjadi Terobosan Prognostik Kanker Otak Pediatrik?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-mantis-ai-model-menjadi-terobosan-prognostik-kanker-otak-pediatrik</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-mantis-ai-model-menjadi-terobosan-prognostik-kanker-otak-pediatrik</guid>
+      <title><![CDATA[Kenapa Docker Multi-Stage Builds Wajib untuk Aplikasi Node.js di Production?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-docker-multi-stage-builds-wajib-untuk-aplikasi-nodejs-di-production</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-docker-multi-stage-builds-wajib-untuk-aplikasi-nodejs-di-production</guid>
       <pubDate>Wed, 04 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Artificial Intelligence</category>
-      <description><![CDATA[Model MANTIS AI dapat memprediksi prognosis individu pada pasien kanker otak anak dengan akurasi tinggi, memanfaatkan data multi‑omics dan deep learning.]]></description>
+      <category>DevOps &amp; Cloud</category>
+      <description><![CDATA[Multi-stage builds merampingkan image Docker Node.js dari 1.2GB menjadi di bawah 120MB, mempercepat deployment CI/CD dan meminimalkan celah keamanan CVE.]]></description>
       <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
     </item>
     <item>
-      <title><![CDATA[Kenapa Groundcover Mengubah Akuisisi Wand Menjadi Beta Rightsizing Kubernetes?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-groundcover-mengubah-akuisisi-wand-menjadi-beta-rightsizing-kubernetes</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-groundcover-mengubah-akuisisi-wand-menjadi-beta-rightsizing-kubernetes</guid>
-      <pubDate>Wed, 04 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Cloud &amp; DevOps</category>
-      <description><![CDATA[Groundcover memanfaatkan akuisisi Wand untuk meluncurkan beta rightsizing Kubernetes, membantu tim DevOps mengoptimalkan biaya dan performa cluster secara otomatis.]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa Solopreneur Perlu Panduan Keamanan Siber dari NIST?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-solopreneur-perlu-panduan-keamanan-siber-dari-nist</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-solopreneur-perlu-panduan-keamanan-siber-dari-nist</guid>
+      <title><![CDATA[Kenapa AI Coding Agents Seperti Cursor dan Claude Code Mengubah Standar Engineer?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-ai-coding-agents-seperti-cursor-dan-claude-code-mengubah-standar-engineer</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-ai-coding-agents-seperti-cursor-dan-claude-code-mengubah-standar-engineer</guid>
       <pubDate>Tue, 03 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Cybersecurity</category>
-      <description><![CDATA[NIST rilis panduan keamanan siber khusus untuk pekerja lepas dan solopreneur, menawarkan langkah praktis melindungi data serta infrastruktur pribadi.]]></description>
+      <category>AI &amp; Developer Tools</category>
+      <description><![CDATA[Pergeseran dari auto-complete pasif ke autonomous coding agent menuntut software engineer menguasai arsitektur sistem, verifikasi kode, dan context management.]]></description>
       <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
     </item>
     <item>
-      <title><![CDATA[Kenapa JPMorgan Mengandalkan Teknologi Data Besar untuk Prediksi Reaksi Pasar Pasca Midterms?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-jpmorgan-mengandalkan-teknologi-data-besar-untuk-prediksi-reaksi-pasar-pasca-midterms</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-jpmorgan-mengandalkan-teknologi-data-besar-untuk-prediksi-reaksi-pasar-pasca-midterms</guid>
-      <pubDate>Tue, 03 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Software Engineering</category>
-      <description><![CDATA[JPMorgan memanfaatkan platform data besar, AI, dan arsitektur cloud‑native untuk mengantisipasi volatilitas pasar setelah pemilihan tengah masa jabatan (midterms).]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa Apple Gagal Menghadirkan Mac Layar Sentuh yang Revolusioner?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-apple-gagal-menghadirkan-mac-layar-sentuh-yang-revolusioner</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-apple-gagal-menghadirkan-mac-layar-sentuh-yang-revolusioner</guid>
+      <title><![CDATA[Kenapa JWT Refresh Token Rotation Krusial untuk Keamanan REST API?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-jwt-refresh-token-rotation-krusial-untuk-keamanan-rest-api</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-jwt-refresh-token-rotation-krusial-untuk-keamanan-rest-api</guid>
       <pubDate>Mon, 02 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Hardware &amp; Chips</category>
-      <description><![CDATA[Apple pernah mempertimbangkan Mac dengan layar sentuh, namun memutuskan tidak meluncurkannya, memilih fokus pada iPad dan iPhone untuk menjaga diferensiasi ekosistem.]]></description>
+      <category>Architecture &amp; Security</category>
+      <description><![CDATA[Menyimpan JWT tanpa rotasi refresh token membuka celah pencurian sesi. Pelajari teknik implementasi Refresh Token Rotation dengan Redis blacklist.]]></description>
       <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
     </item>
     <item>
-      <title><![CDATA[Kenapa Anthropic Melarang Perlakuan Kasar pada Claude?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-anthropic-melarang-perlakuan-kasar-pada-claude</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-anthropic-melarang-perlakuan-kasar-pada-claude</guid>
-      <pubDate>Mon, 02 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Artificial Intelligence</category>
-      <description><![CDATA[Anthropic menegaskan aturan etika interaksi bukan karena model memiliki emosi, melainkan demi mencegah eksploitasi prompt injection dan degradasi kualitas output.]]></description>
-      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
-    </item>
-    <item>
-      <title><![CDATA[Kenapa OpenAI Memperkenalkan Strategi "The Future of the Firm" untuk Mengubah Bisnis AI?]]></title>
-      <link>https://gadingrdtya.my.id/blog/kenapa-openai-memperkenalkan-strategi-the-future-of-the-firm-untuk-mengubah-bisnis-ai</link>
-      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-openai-memperkenalkan-strategi-the-future-of-the-firm-untuk-mengubah-bisnis-ai</guid>
+      <title><![CDATA[Kenapa Flutter dan TensorFlow Lite Ideal untuk Aplikasi Edge AI Mobile?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-flutter-dan-tensorflow-lite-ideal-untuk-aplikasi-edge-ai-mobile</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-flutter-dan-tensorflow-lite-ideal-untuk-aplikasi-edge-ai-mobile</guid>
       <pubDate>Sun, 01 Nov 2026 01:00:00 GMT</pubDate>
-      <category>Artificial Intelligence</category>
-      <description><![CDATA[OpenAI mengumumkan strategi enterprise baru yang menekankan model inferensi hemat latensi, integrasi private deployment, dan SLA komputasi 99,9%.]]></description>
+      <category>AI &amp; Developer Tools</category>
+      <description><![CDATA[Kombinasi Flutter dan TFLite memungkinkan eksekusi model machine learning secara lokal di perangkat mobile tanpa latensi internet dan bebas biaya server.]]></description>
       <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
     </item>
   </channel>
