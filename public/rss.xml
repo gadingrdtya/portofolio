@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Mon, 09 Nov 2026 03:12:03 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 11:17:27 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Benchmark SecureIQLab 2026 Mengungkap Tren Keamanan Web Masa Depan?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-benchmark-secureiqlab-2026-mengungkap-tren-keamanan-web-masa-depan</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-benchmark-secureiqlab-2026-mengungkap-tren-keamanan-web-masa-depan</guid>
+      <pubDate>Mon, 09 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Architecture &amp; Security</category>
+      <description><![CDATA[SecureIQLab 2026 menunjukkan peningkatan signifikan pada mitigasi serangan OWASP Top 10, namun menuntut trade‑off latency dan kompleksitas arsitektur.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa React 19 Menggantikan useMemo dan useCallback Lewat React Compiler?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-react-19-menggantikan-usememo-dan-usecallback-lewat-react-compiler</link>
