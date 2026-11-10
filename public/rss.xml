@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Tue, 10 Nov 2026 01:17:28 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 11:17:29 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Container Docker Kecil Bisa Memblokir Iklan YouTube di Semua TV Tanpa Ganti Aplikasi?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-container-docker-kecil-bisa-memblokir-iklan-youtube-di-semua-tv-tanpa-ganti-aplikasi</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-container-docker-kecil-bisa-memblokir-iklan-youtube-di-semua-tv-tanpa-ganti-aplikasi</guid>
+      <pubDate>Tue, 10 Nov 2026 01:00:00 GMT</pubDate>
+      <category>DevOps &amp; Cloud</category>
+      <description><![CDATA[Sebuah container Docker berukuran 30 MB dapat memfilter iklan YouTube dan sponsor di semua TV, tanpa mengubah aplikasi streaming. Solusi ini mengandalkan DNS‑level filtering dan proxy transparan.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Claude Fable 5.2 Mengubah Cara Kita Menggunakan GitHub Copilot?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-claude-fable-5-2-mengubah-cara-kita-menggunakan-github-copilot</link>
