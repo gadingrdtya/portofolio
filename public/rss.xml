@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Mon, 09 Nov 2026 11:17:27 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 01:17:28 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Claude Fable 5.2 Mengubah Cara Kita Menggunakan GitHub Copilot?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-claude-fable-5-2-mengubah-cara-kita-menggunakan-github-copilot</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-claude-fable-5-2-mengubah-cara-kita-menggunakan-github-copilot</guid>
+      <pubDate>Tue, 10 Nov 2026 01:00:00 GMT</pubDate>
+      <category>AI &amp; Developer Tools</category>
+      <description><![CDATA[Claude Fable 5.2 terintegrasi ke GitHub Copilot, meningkatkan akurasi saran kode, kontrol prompt, dan opsi privasi untuk developer full‑stack.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Benchmark SecureIQLab 2026 Mengungkap Tren Keamanan Web Masa Depan?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-benchmark-secureiqlab-2026-mengungkap-tren-keamanan-web-masa-depan</link>
