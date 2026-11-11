@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Tue, 10 Nov 2026 11:17:29 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 01:17:27 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa AMD EPYC 9965 Dapat Meningkatkan Transaksi PostgreSQL hingga Ratusan Ribu per Detik?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-amd-epyc-9965-dapat-meningkatkan-transaksi-postgresql-hingga-ratusan-ribu-per-detik</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-amd-epyc-9965-dapat-meningkatkan-transaksi-postgresql-hingga-ratusan-ribu-per-detik</guid>
+      <pubDate>Wed, 11 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Backend &amp; Database</category>
+      <description><![CDATA[AMD EPYC 9965 mencatat lebih dari 300k TPS pada beban PostgreSQL read‑write, menyoroti dampak arsitektur CPU modern pada backend skala besar.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Container Docker Kecil Bisa Memblokir Iklan YouTube di Semua TV Tanpa Ganti Aplikasi?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-container-docker-kecil-bisa-memblokir-iklan-youtube-di-semua-tv-tanpa-ganti-aplikasi</link>
