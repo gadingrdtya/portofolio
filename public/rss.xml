@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Fri, 13 Nov 2026 01:17:26 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 11:17:29 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Pembaruan Keamanan PostgreSQL 15 Mengakhiri Dukungan PostgreSQL 14 dan Apa Dampaknya bagi Developer?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-pembaruan-keamanan-postgresql-15-mengakhiri-dukung-postgresql-14-dan-apa-dampaknya-bagi-developer</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-pembaruan-keamanan-postgresql-15-mengakhiri-dukung-postgresql-14-dan-apa-dampaknya-bagi-developer</guid>
+      <pubDate>Fri, 13 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Backend &amp; Database</category>
+      <description><![CDATA[PostgreSQL rilis update keamanan menutup 52 celah kritis dan menghentikan dukungan untuk versi 14, memaksa tim backend menyiapkan migrasi.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Remote Spectre Attacks Mengancam Cloudflare Workers dan Apa yang Harus Dilakukan Developer?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-remote-spectre-attacks-mengancam-cloudflare-workers-dan-apa-yang-harus-dilakukan-developer</link>
