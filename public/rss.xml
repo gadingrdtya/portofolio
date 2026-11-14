@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Fri, 13 Nov 2026 11:17:29 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 01:17:26 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa React dengan TypeScript Memerlukan Best Practices?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-react-dengan-typescript-memerlukan-best-practices</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-react-dengan-typescript-memerlukan-best-practices</guid>
+      <pubDate>Sat, 14 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Frontend Development</category>
+      <description><![CDATA[SitePoint mengulas praktik terbaik menggabungkan React dan TypeScript untuk meningkatkan tipe‑safety, performa, dan developer experience.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Pembaruan Keamanan PostgreSQL 15 Mengakhiri Dukungan PostgreSQL 14 dan Apa Dampaknya bagi Developer?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-pembaruan-keamanan-postgresql-15-mengakhiri-dukung-postgresql-14-dan-apa-dampaknya-bagi-developer</link>
