@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Sat, 14 Nov 2026 01:17:26 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 11:19:30 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa SAML, OAuth 2.0, dan OIDC Memiliki Trade‑off yang Krusial untuk Arsitektur Aplikasi Modern?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-saml-oauth-2-0-dan-oidc-memiliki-trade-off-yang-krusial-untuk-arsitektur-aplikasi-modern</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-saml-oauth-2-0-dan-oidc-memiliki-trade-off-yang-krusial-untuk-arsitektur-aplikasi-modern</guid>
+      <pubDate>Sat, 14 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Architecture &amp; Security</category>
+      <description><![CDATA[Cisco Duo membandingkan SAML, OAuth 2.0, dan OIDC. Artikel ini mengupas trade‑off arsitektur, performa, dan DX bagi developer web modern.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa React dengan TypeScript Memerlukan Best Practices?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-react-dengan-typescript-memerlukan-best-practices</link>
