@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Sun, 15 Nov 2026 01:17:28 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 01:17:24 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Pelanggan Supabase Secara Tidak Sengaja Membocorkan Data Pengguna ke Web?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-pelanggan-supabase-secara-tidak-sengaja-membocorkan-data-pengguna-ke-web</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-pelanggan-supabase-secara-tidak-sengaja-membocorkan-data-pengguna-ke-web</guid>
+      <pubDate>Mon, 16 Nov 2026 01:00:00 GMT</pubDate>
+      <category>DevOps &amp; Cloud</category>
+      <description><![CDATA[Beberapa pelanggan Supabase mengonfigurasi bucket storage atau kebijakan RLS secara publik, mengakibatkan jutaan data pribadi dapat diakses lewat internet.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Claude Code Mengubah Cara Kita Membuat Fitur Browser?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-claude-code-mengubah-cara-kita-membuat-fitur-browser</link>
