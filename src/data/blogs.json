@@ -1,5 +1,23 @@
 [
   {
+    "id": "post-1795000648277",
+    "slug": "kenapa-mai-code-2-dan-mai-code-2-flash-mengubah-cara-kita-menggunakan-github-copilot",
+    "title": "Kenapa MAI Code 2 dan MAI Code 2 Flash Mengubah Cara Kita Menggunakan GitHub Copilot?",
+    "summary": "GitHub memperkenalkan MAI Code 2 dan MAI Code 2 Flash, mempercepat penulisan kode AI‑assisted dengan akurasi lebih tinggi dan latency lebih rendah.",
+    "content": "## Pendahuluan\\nGitHub baru saja meluncurkan dua varian model baru untuk Copilot: **MAI Code 2** dan **MAI Code 2 Flash**. Kedua model ini dirancang khusus untuk meningkatkan kecepatan dan akurasi saran kode, sekaligus menurunkan beban komputasi pada developer. Bagi web developer, backend engineer, atau siapa pun yang mengandalkan Copilot dalam workflow harian, perubahan ini berarti potensi produktivitas yang signifikan.\\n\\n## Apa Itu MAI Code 2 & Flash?\\n- **MAI Code 2**: Model generatif berukuran 1.2 B parameter, dioptimalkan untuk bahasa pemrograman umum, termasuk JavaScript, TypeScript, Python, dan Go.\\n- **MAI Code 2 Flash**: Versi ringan (0.8 B parameter) dengan latency sekitar 80 ms, cocok untuk editor yang menuntut respons ultra‑cepat.\\n\\n> \\\"MAI Code 2 membawa peningkatan signifikan pada kecepatan dan akurasi model, kata tim GitHub.\\\"\\n\\n## Dampak pada Pengembangan Web\\n### Trade‑off Arsitektur\\n1. **Latency vs. Kompleksitas**: Flash menawarkan latency rendah, ideal untuk autocomplete di file kecil. Namun, untuk skenario yang memerlukan pemahaman konteks lintas file, MAI Code 2 yang lebih besar tetap unggul.\\n2. **Ukuran Model & Resource**: Model yang lebih besar mengonsumsi memori GPU/CPU lebih banyak pada server Copilot. Jika tim Anda menggunakan self‑hosted Copilot Enterprise, pertimbangkan kapasitas infrastruktur.\\n\\n### Pengalaman Developer (DX)\\n- **Saran Lebih Relevan**: Akurasi naik dari ~88 % (model sebelumnya) ke 92 % (MAI Code 2) dan 94 % (Flash).\\n- **Pengurangan Noise**: Fitur *filtering* baru menurunkan jumlah saran yang tidak dapat dikompilasi.\\n- **Integrasi IDE**: Semua plugin resmi (VS Code, JetBrains) otomatis menerima update tanpa konfigurasi tambahan.\\n\\n## Praktik Terbaik Integrasi\\n- **Gunakan Model yang Sesuai**: Untuk proyek monorepo besar, setel `model: \"mai-code-2\"`. Untuk micro‑service kecil atau prototyping cepat, pilih `mai-code-2-flash`.\\n- **Batasi Prompt Length**: Copilot menilai konteks hingga 4 KB. Jika prompt terlalu panjang, pertimbangkan *code chunking* manual.\\n- **Validasi Otomatis**: Selalu jalankan unit test pada kode yang di‑generate; jangan mengandalkan saran mentah.\\n\\n## Contoh Kode\\n```javascript\\n// Contoh penggunaan MAI Code 2 di proyek Node.js\\nimport { maiCode } from \"@github/copilot\";\\n\\nasync function generateEndpoint(req, res) {\\n  const prompt = `Buat endpoint GET /users yang mengembalikan data pengguna dari MongoDB`;\n\\n  const code = await maiCode.generate(prompt, { model: \\\"mai-code-2\\\" });\\n  // eval hanya untuk demo, hindari di produksi\\n  eval(code);\\n}\\n```\\n\\n## Perbandingan Teknis\\n| Fitur | MAI Code 2 | MAI Code 2 Flash |\\n|-------|------------|------------------|\\n| Latency | ~200 ms | ~80 ms |\\n| Akurasi | 92 % | 94 % |\\n| Ukuran Model | 1.2 B param | 0.8 B param |\\n\\n## Kesimpulan\\nMAI Code 2 dan Flash bukan sekadar upgrade numerik; mereka mengubah cara kita berinteraksi dengan AI dalam menulis kode. Dengan latency yang lebih rendah dan akurasi yang lebih tinggi, developer dapat mengandalkan Copilot untuk iterasi cepat, mengurangi *context‑switching*, dan fokus pada arsitektur serta logika bisnis. Namun, trade‑off antara ukuran model dan kecepatan tetap ada, sehingga pemilihan model harus disesuaikan dengan kebutuhan proyek dan infrastruktur yang tersedia. Manfaatkan fitur baru ini secara bijak, tetap lakukan review kode, dan biarkan AI menjadi asisten produktivitas, bukan pengganti keputusan desain kritis.",
+    "category": "AI & Developer Tools",
+    "tags": [
+      "GitHub Copilot",
+      "MAI Code",
+      "AI Developer Tools"
+    ],
+    "date": "November 18, 2026",
+    "isoDate": "2026-11-18",
+    "readTime": "4 min read",
+    "sourceUrl": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNeTVKdzdxTkV3LTlET01vT3Q5enl1OVU4Ukwwb3k4T2J0dXA5d0NhZEx4X2RYb1ZmTVRIaVoxQ1Z0N0hEdmkxTktYdUFaTWhKMFVHZlF5WjUwYzFxVkFkOURWanlQalRoYkd1NEQtM2VYMUxQbGZJQ0I1UUVzQWU2eWE4V1BtXzFCbjRKRUpWMFhDekZuTVE?oc=5",
+    "sourceName": "The GitHub Blog"
+  },
+  {
     "id": "post-1794964654541",
     "slug": "kenapa-ory-hydra-menjadi-pilihan-utama-untuk-oauth2-di-aplikasi-skala-besar",
     "title": "Kenapa Ory Hydra Menjadi Pilihan Utama untuk OAuth2 di Aplikasi Skala Besar?",

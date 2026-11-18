@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Wed, 18 Nov 2026 01:17:34 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 11:17:28 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa MAI Code 2 dan MAI Code 2 Flash Mengubah Cara Kita Menggunakan GitHub Copilot?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-mai-code-2-dan-mai-code-2-flash-mengubah-cara-kita-menggunakan-github-copilot</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-mai-code-2-dan-mai-code-2-flash-mengubah-cara-kita-menggunakan-github-copilot</guid>
+      <pubDate>Wed, 18 Nov 2026 01:00:00 GMT</pubDate>
+      <category>AI &amp; Developer Tools</category>
+      <description><![CDATA[GitHub memperkenalkan MAI Code 2 dan MAI Code 2 Flash, mempercepat penulisan kode AI‑assisted dengan akurasi lebih tinggi dan latency lebih rendah.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Ory Hydra Menjadi Pilihan Utama untuk OAuth2 di Aplikasi Skala Besar?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-ory-hydra-menjadi-pilihan-utama-untuk-oauth2-di-aplikasi-skala-besar</link>
