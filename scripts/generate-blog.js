@@ -255,12 +255,13 @@ KEMBALIKAN HANYA JSON MURNI DENGAN STRUKTUR BERIKUT:
     },
     body: JSON.stringify({
       model: 'openai/gpt-oss-120b',
+      response_format: { type: 'json_object' },
       messages: [
-        { role: 'system', content: 'You are an elite tech journalist returning strictly valid JSON without any image tags.' },
+        { role: 'system', content: 'You are an elite software engineer and tech writer. You must return strictly valid JSON matching the requested structure without any markdown code block wrappers, no unescaped quotes inside strings, and no image tags.' },
         { role: 'user', content: prompt }
       ],
-      temperature: 0.5,
-      max_tokens: 2500
+      temperature: 0.4,
+      max_tokens: 3000
     })
   });
 
@@ -283,11 +284,30 @@ KEMBALIKAN HANYA JSON MURNI DENGAN STRUKTUR BERIKUT:
   let parsed;
   try {
     parsed = JSON.parse(text);
-  } catch (err) {
-    const sanitized = text.replace(/:\s*"([^"]*)"/g, (match, p1) => {
-      return ': "' + p1.replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"';
-    });
-    parsed = JSON.parse(sanitized);
+  } catch (err1) {
+    try {
+      // 1. Bersihkan carriage returns & kontrol karakter liar
+      const cleaned = text
+        .replace(/[\u0000-\u001F\u007F-\u009F]/g, (c) => (c === '\n' || c === '\t' || c === '\r' ? c : ''))
+        .replace(/\r\n/g, '\n');
+      parsed = JSON.parse(cleaned);
+    } catch (err2) {
+      // 2. Escape literal unescaped newlines dan unescaped quotes dalam properti
+      try {
+        const sanitized = text.replace(/:\s*"([\s\S]*?)"\s*(,|})/g, (match, val, ending) => {
+          const escapedVal = val
+            .replace(/\\"/g, '"')
+            .replace(/"/g, '\\"')
+            .replace(/\n/g, '\\n')
+            .replace(/\r/g, '\\r')
+            .replace(/\t/g, '\\t');
+          return `: "${escapedVal}"${ending}`;
+        });
+        parsed = JSON.parse(sanitized);
+      } catch (err3) {
+        throw new Error(`Failed to parse AI JSON response: ${err1.message}. Raw preview: ${text.slice(0, 200)}...`);
+      }
+    }
   }
 
   // Safety clean: strip any accidental image tags
@@ -344,8 +364,8 @@ async function main() {
 
   console.log(`Targeting category: ${sortedChannels[0].category}`);
 
-  let candidate = null;
-  // Try preferred channels in order of freshness
+  // Collect all eligible candidates across channels (up to 5 candidates)
+  const candidateQueue = [];
   for (const channel of sortedChannels) {
     console.log(`Searching fresh news for category: ${channel.category}...`);
     const news = await fetchNewsForCategory(channel);
@@ -355,21 +375,36 @@ async function main() {
       const isDuplicate = isDuplicateTopic(item.title, existingBlogs);
 
       if (!alreadyHasUrl && !isDuplicate) {
-        candidate = item;
-        break;
+        candidateQueue.push(item);
+        if (candidateQueue.length >= 5) break;
       }
     }
-    if (candidate) break;
+    if (candidateQueue.length >= 5) break;
   }
 
-  if (!candidate) {
+  if (candidateQueue.length === 0) {
     console.log('No fresh distinct news found across all categories.');
     return;
   }
 
-  console.log(`Found candidate: "${candidate.title}" [${candidate.source}] (${candidate.targetCategory})`);
-  console.log('Generating structured article via Groq...');
-  const article = await generateArticle(candidate);
+  let article = null;
+  let successfulCandidate = null;
+
+  for (let i = 0; i < candidateQueue.length; i++) {
+    const candidate = candidateQueue[i];
+    console.log(`Attempt ${i + 1}/${candidateQueue.length}: Generating article for "${candidate.title}" [${candidate.source}]...`);
+    try {
+      article = await generateArticle(candidate);
+      successfulCandidate = candidate;
+      break;
+    } catch (genErr) {
+      console.warn(`Warning: Failed attempt ${i + 1} (${genErr.message}). Trying next candidate...`);
+    }
+  }
+
+  if (!article) {
+    throw new Error('All candidate generation attempts failed.');
+  }
 
   const existingSlugs = new Set(existingBlogs.map(b => b.slug.toLowerCase()));
   if (existingSlugs.has(article.slug)) {
