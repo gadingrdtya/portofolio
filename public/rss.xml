@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Wed, 18 Nov 2026 11:17:28 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 01:17:26 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Cloudflare Workers dan Containers Kini Dukung Inbound TCP dan gRPC?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-cloudflare-workers-dan-containers-kini-dukung-inbound-tcp-dan-grpc</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-cloudflare-workers-dan-containers-kini-dukung-inbound-tcp-dan-grpc</guid>
+      <pubDate>Thu, 19 Nov 2026 01:00:00 GMT</pubDate>
+      <category>DevOps &amp; Cloud</category>
+      <description><![CDATA[Cloudflare menambahkan dukungan inbound TCP dan gRPC pada Workers serta Containers, membuka peluang arsitektur edge yang lebih fleksibel.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa MAI Code 2 dan MAI Code 2 Flash Mengubah Cara Kita Menggunakan GitHub Copilot?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-mai-code-2-dan-mai-code-2-flash-mengubah-cara-kita-menggunakan-github-copilot</link>

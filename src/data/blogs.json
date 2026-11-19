@@ -1,5 +1,26 @@
 [
   {
+    "id": "post-1795051046256",
+    "slug": "kenapa-cloudflare-workers-dan-containers-kini-dukung-inbound-tcp-dan-grpc",
+    "title": "Kenapa Cloudflare Workers dan Containers Kini Dukung Inbound TCP dan gRPC?",
+    "summary": "Cloudflare menambahkan dukungan inbound TCP dan gRPC pada Workers serta Containers, membuka peluang arsitektur edge yang lebih fleksibel.",
+    "content": "## Pendahuluan\nCloudflare baru‑baru ini mengumumkan bahwa **Workers** dan **Containers** kini dapat menerima koneksi TCP masuk serta protokol gRPC. Ini berarti aplikasi edge tidak lagi terbatas pada HTTP/HTTPS, membuka jalan bagi layanan seperti database proxy, VPN, atau streaming media yang berjalan tepat di tepi jaringan.\n\n## Mengapa Ini Penting untuk Developer?\n- **Arsitektur yang lebih fleksibel**: Anda dapat menempatkan layanan stateful atau protocol‑specific di edge tanpa harus mengelola server tradisional.\n- **Latency terdekat**: Karena koneksi TCP langsung diproses di lokasi terdekat, latency dapat dipangkas signifikan dibandingkan rute ke pusat data.\n- **Pengurangan beban backend**: Beban autentikasi, rate‑limiting, atau transformasi data dapat dipindahkan ke edge, mengurangi beban pada layanan inti.\n\n> ‘Dengan menambahkan dukungan inbound TCP dan gRPC, Cloudflare memperluas horizon edge computing menjadi lebih dari sekadar HTTP.’ – Cloudflare Blog\n\n## Trade‑off Arsitektural\n| Aspek | Keuntungan | Potensi Risiko |\n|------|------------|----------------|\n| **Performansi** | Latency rendah, throughput tinggi untuk protokol binary | Overhead manajemen koneksi long‑lived di edge |\n| **Keamanan** | Dapat menerapkan firewall dan TLS di edge | Kompleksitas konfigurasi ACL TCP |\n| **Skalabilitas** | Autoscaling otomatis pada Workers | Batasan sumber daya per instance Workers/Containers |\n\n## Implementasi Praktis\n### 1. Membuat Worker yang Menangani gRPC\n```javascript\naddEventListener('fetch', event => {\n  event.respondWith(handleGrpc(event.request))\n})\n\nasync function handleGrpc(request) {\n  // Menggunakan library @grpc/grpc-js yang sudah di‑bundle\n  const { Server, ServerCredentials } = require('@grpc/grpc-js')\n  const server = new Server()\n  // ... register service definitions\n  return new Response('gRPC server started', { status: 200 })\n}\n```\n> *Catatan*: Karena Workers tidak memiliki akses ke filesystem, semua dependensi harus dibundel dengan bundler seperti Webpack atau esbuild.\n\n### 2. Menjalankan Container dengan TCP Listener\n```toml\n# cloudflare.toml\n[container]\nimage = 'myorg/tcp-proxy:latest'\nport = 8080   # Port yang akan dibuka untuk inbound TCP\n```\nDeploy dengan `wrangler deploy`. Cloudflare akan mengekspose port tersebut melalui jaringan edge, sehingga klien dapat terhubung langsung ke `tcp-proxy.example.com:8080`.\n\n## Best Practices\n- **Batasi exposure port**: Hanya buka port yang benar‑benar diperlukan, gunakan Cloudflare Access untuk otentikasi.\n- **Monitoring**: Manfaatkan Cloudflare Logs API untuk memantau koneksi TCP dan latency.\n- **Graceful shutdown**: Karena Workers bersifat stateless, pastikan layanan TCP Anda dapat menangani reconnect dengan cepat.\n- **Testing lokal**: Gunakan `wrangler dev --local` dengan `--test` untuk mensimulasikan koneksi TCP sebelum deploy.\n\n## Kesimpulan\nDukungan inbound TCP dan gRPC pada Cloudflare Workers serta Containers memberi developer kontrol lebih besar atas arsitektur edge. Dengan memahami trade‑off performansi, keamanan, dan manajemen sumber daya, Anda dapat merancang solusi yang memanfaatkan latency terdekat tanpa mengorbankan stabilitas. Eksperimenlah dengan protokol yang selama ini terhalang oleh batasan HTTP, dan manfaatkan ekosistem Cloudflare untuk scaling otomatis serta proteksi bawaan.",
+    "category": "DevOps & Cloud",
+    "tags": [
+      "Cloudflare",
+      "Workers",
+      "Containers",
+      "gRPC",
+      "TCP",
+      "Edge Computing"
+    ],
+    "date": "November 19, 2026",
+    "isoDate": "2026-11-19",
+    "readTime": "4 min read",
+    "sourceUrl": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE92TTN1SkhXVEIya28tRFQ1MlNJdDI4aTljUEtKR2RHcnlBYVAzNzBYcGZiMmN3TEl1Skx4REx1WXhBdm5aY2RkN0dRdGRsOFhZRVlF?oc=5",
+    "sourceName": "Cloudflare Blog"
+  },
+  {
     "id": "post-1795000648277",
     "slug": "kenapa-mai-code-2-dan-mai-code-2-flash-mengubah-cara-kita-menggunakan-github-copilot",
     "title": "Kenapa MAI Code 2 dan MAI Code 2 Flash Mengubah Cara Kita Menggunakan GitHub Copilot?",
