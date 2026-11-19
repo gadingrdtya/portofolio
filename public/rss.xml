@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Thu, 19 Nov 2026 01:17:26 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 11:17:25 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Exploit RCE pada PostgreSQL, MySQL, dan Oracle Mengancam Keamanan Backend Anda?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-exploit-rce-pada-postgresql-mysql-dan-oracle-mengancam-keamanan-backend-anda</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-exploit-rce-pada-postgresql-mysql-dan-oracle-mengancam-keamanan-backend-anda</guid>
+      <pubDate>Thu, 19 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Backend &amp; Database</category>
+      <description><![CDATA[Peneliti mengungkap exploit Remote Code Execution yang memengaruhi tiga DBMS utama, menyoroti risiko serius bagi aplikasi web modern.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Cloudflare Workers dan Containers Kini Dukung Inbound TCP dan gRPC?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-cloudflare-workers-dan-containers-kini-dukung-inbound-tcp-dan-grpc</link>

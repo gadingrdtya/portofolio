@@ -1,5 +1,26 @@
 [
   {
+    "id": "post-1795087045754",
+    "slug": "kenapa-exploit-rce-pada-postgresql-mysql-dan-oracle-mengancam-keamanan-backend-anda",
+    "title": "Kenapa Exploit RCE pada PostgreSQL, MySQL, dan Oracle Mengancam Keamanan Backend Anda?",
+    "summary": "Peneliti mengungkap exploit Remote Code Execution yang memengaruhi tiga DBMS utama, menyoroti risiko serius bagi aplikasi web modern.",
+    "content": "## Pendahuluan\nPeneliti keamanan dari The Hacker News baru-baru ini mempublikasikan temuan **Remote Code Execution (RCE)** yang dapat memanfaatkan celah pada tiga sistem manajemen basis data (DBMS) paling populer: PostgreSQL, MySQL, dan Oracle. Temuan ini relevan bagi setiap engineer yang mengelola API backend, layanan microservice, atau aplikasi monolitik yang bergantung pada database tradisional.\n\n> Penelitian ini menunjukkan bahwa serangan RCE dapat terjadi tanpa otentikasi bila konfigurasi tertentu tidak diproteksi dengan baik.\n\n## Bagaimana Exploit Bekerja?\nSetiap DBMS memiliki mekanisme eksternal yang memungkinkan eksekusi perintah sistem operasi, misalnya `COPY` pada PostgreSQL, `LOAD_FILE` pada MySQL, atau `UTL_FILE` pada Oracle. Peneliti menemukan kombinasi **payload** yang memanfaatkan fungsi-fungsi ini bersama dengan **privilege escalation** pada level OS.\n\n### Ringkasan Teknik\n- **PostgreSQL**: Memanfaatkan fungsi `COPY ... PROGRAM` yang dapat mengeksekusi perintah shell bila parameter `superuser` tidak dibatasi.\n- **MySQL**: Menggunakan `SELECT ... INTO OUTFILE` untuk menulis file skrip, lalu memicu eksekusi melalui `LOAD_FILE`.\n- **Oracle**: Mengaktifkan paket `DBMS_SCHEDULER` atau `UTL_HTTP` untuk menjalankan kode eksternal bila hak istimewa `EXECUTE` diberikan pada user.\n\n## Dampak Praktis bagi Engineer Backend\n1. **Komplikasi pada Deployment** – Banyak tim mengandalkan container image yang sudah ter‑pre‑configured dengan user `root`. Jika DBMS dijalankan dengan hak istimewa tinggi, exploit dapat melompat ke host.\n2. **Peningkatan Attack Surface** – API yang menerima input langsung ke query (misalnya query builder yang tidak memfilter nama file) menjadi vektor serangan.\n3. **Kehilangan Data & Integritas** – RCE dapat menghapus atau memodifikasi tabel kritis, mengakibatkan downtime dan biaya pemulihan.\n\n## Praktik Terbaik (Best Practices) untuk Mitigasi\n- **Least Privilege**: Jalankan setiap DBMS dengan user non‑root dan batasi hak `SUPERUSER` atau `SYSDBA` hanya untuk admin.\n- **Network Segmentation**: Isolasi database pada subnet terpisah, hanya izinkan akses dari aplikasi backend melalui firewall.\n- **Audit & Logging**: Aktifkan audit log pada perintah `COPY`, `SELECT ... INTO OUTFILE`, dan `DBMS_SCHEDULER`. Analisis log secara rutin dengan SIEM.\n- **Patch Management**: Terapkan patch keamanan resmi secepatnya; vendor PostgreSQL, MySQL, dan Oracle sudah merilis update mitigasi.\n- **Input Validation**: Hindari interpolasi string langsung ke perintah database. Gunakan parameterized query atau ORM yang memvalidasi nama objek.\n\n## Perbandingan Ringkas\n| DBMS | Fungsi Berbahaya | Mitigasi Utama |\n|------|------------------|----------------|\n| PostgreSQL | `COPY ... PROGRAM` | Non‑aktifkan `superuser` untuk user aplikasi |\n| MySQL | `SELECT ... INTO OUTFILE` | Set `secure_file_priv` ke direktori read‑only |\n| Oracle | `DBMS_SCHEDULER`, `UTL_HTTP` | Cabut hak `EXECUTE` pada paket untuk user non‑admin |\n\n## Contoh Kode: Mengamankan Query di Node.js (pg)\n```js\nconst { Pool } = require('pg');\nconst pool = new Pool({\n  connectionString: process.env.DATABASE_URL,\n  // Pastikan user tidak memiliki superuser rights\n});\n\nasync function insertFilePath(path) {\n  // Hindari string interpolation langsung\n  const query = 'INSERT INTO files(path) VALUES($1)';\n  await pool.query(query, [path]);\n}\n```\nKode di atas menunjukkan penggunaan *parameterized query* untuk mencegah penyisipan perintah berbahaya.\n\n## Kesimpulan\nExploit RCE pada PostgreSQL, MySQL, dan Oracle bukan sekadar teori akademik; mereka menyoroti pentingnya **defense‑in‑depth** pada lapisan data. Engineer backend harus meninjau konfigurasi hak akses, memperketat jaringan, dan memastikan proses patch berjalan otomatis. Dengan mengadopsi prinsip least privilege dan praktik sanitasi input, risiko serangan dapat ditekan secara signifikan, melindungi aplikasi dan data pelanggan dari ancaman yang semakin canggih.\n",
+    "category": "Backend & Database",
+    "tags": [
+      "PostgreSQL",
+      "MySQL",
+      "Oracle",
+      "RCE",
+      "Security",
+      "Backend"
+    ],
+    "date": "November 19, 2026",
+    "isoDate": "2026-11-19",
+    "readTime": "4 min read",
+    "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZmJFUnJuUU9MbEVDVE1rYVZ5OGl0eFFPb2JnOFNBUU9SODdKUkdtNlFyUVhjZFBLWHhHbmtWdnRSUlRhQVZRR05uaTc1aDJXM0liR3JnQlM1VFNWd2N4S1FYZmJLZmtLOEpFbjJ6bUQtNUNOLTJHOFg4ZF9vU3M3Rg?oc=5",
+    "sourceName": "The Hacker News"
+  },
+  {
     "id": "post-1795051046256",
     "slug": "kenapa-cloudflare-workers-dan-containers-kini-dukung-inbound-tcp-dan-grpc",
     "title": "Kenapa Cloudflare Workers dan Containers Kini Dukung Inbound TCP dan gRPC?",
