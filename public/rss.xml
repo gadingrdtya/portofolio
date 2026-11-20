@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Fri, 20 Nov 2026 01:17:23 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 11:17:34 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa IAM Authentication dengan OAuth 2.0 untuk Amazon MQ for RabbitMQ Penting bagi Developer?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-iam-authentication-dengan-oauth-2-0-untuk-amazon-mq-for-rabbitmq-penting-bagi-developer</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-iam-authentication-dengan-oauth-2-0-untuk-amazon-mq-for-rabbitmq-penting-bagi-developer</guid>
+      <pubDate>Fri, 20 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Architecture &amp; Security</category>
+      <description><![CDATA[AWS menambahkan dukungan IAM + OAuth 2.0 pada Amazon MQ for RabbitMQ, memberi cara terstandarisasi, aman, dan mudah di‑integrasikan untuk aplikasi web modern.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Pengembangan Frontend Memerlukan "Quick‑Drying" Build Tools?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-pengembangan-frontend-memerlukan-quick-drying-build-tools</link>
