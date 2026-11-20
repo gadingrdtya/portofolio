@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Thu, 19 Nov 2026 11:17:25 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 01:17:23 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Pengembangan Frontend Memerlukan "Quick‑Drying" Build Tools?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-pengembangan-frontend-memerlukan-quick-drying-build-tools</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-pengembangan-frontend-memerlukan-quick-drying-build-tools</guid>
+      <pubDate>Fri, 20 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Frontend Development</category>
+      <description><![CDATA[Berita top coat cepat kering dijadikan analogi pentingnya tool build frontend yang cepat, stabil, dan meningkatkan developer experience.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Exploit RCE pada PostgreSQL, MySQL, dan Oracle Mengancam Keamanan Backend Anda?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-exploit-rce-pada-postgresql-mysql-dan-oracle-mengancam-keamanan-backend-anda</link>
