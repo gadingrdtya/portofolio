@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Sun, 22 Nov 2026 01:17:32 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 11:17:38 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Update TypeScript di AWS SDK for JavaScript v3 Penting untuk Frontend Developer?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-update-typescript-di-aws-sdk-for-javascript-v3-penting-untuk-frontend-developer</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-update-typescript-di-aws-sdk-for-javascript-v3-penting-untuk-frontend-developer</guid>
+      <pubDate>Sun, 22 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Frontend Development</category>
+      <description><![CDATA[AWS memperbarui dukungan TypeScript di SDK JavaScript v3, meningkatkan kompatibilitas, tipe yang lebih akurat, dan pengalaman pengembangan bagi frontend engineer.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa PostgreSQL 19 Hadir di Lakebase Mengubah Cara Kita Mengelola Data di Cloud?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-postgresql-19-hadir-di-lakebase-mengubah-cara-kita-mengelola-data-di-cloud</link>
