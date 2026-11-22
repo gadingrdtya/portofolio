@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Sat, 21 Nov 2026 11:17:26 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 01:17:32 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa PostgreSQL 19 Hadir di Lakebase Mengubah Cara Kita Mengelola Data di Cloud?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-postgresql-19-hadir-di-lakebase-mengubah-cara-kita-mengelola-data-di-cloud</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-postgresql-19-hadir-di-lakebase-mengubah-cara-kita-mengelola-data-di-cloud</guid>
+      <pubDate>Sun, 22 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Backend &amp; Database</category>
+      <description><![CDATA[PostgreSQL 19 kini tersedia di Lakebase, menawarkan eksekusi vektor, partisi canggih, dan query store terintegrasi untuk beban kerja cloud modern.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Kebocoran 16.000 Database Supabase Mengancam Praktik DevOps Anda?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-kebocoran-16000-database-supabase-mengancam-praktik-devops-anda</link>

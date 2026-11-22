@@ -1,5 +1,25 @@
 [
   {
+    "id": "post-1795310252339",
+    "slug": "kenapa-postgresql-19-hadir-di-lakebase-mengubah-cara-kita-mengelola-data-di-cloud",
+    "title": "Kenapa PostgreSQL 19 Hadir di Lakebase Mengubah Cara Kita Mengelola Data di Cloud?",
+    "summary": "PostgreSQL 19 kini tersedia di Lakebase, menawarkan eksekusi vektor, partisi canggih, dan query store terintegrasi untuk beban kerja cloud modern.",
+    "content": "## Pendahuluan\nPostgreSQL 19 baru saja dirilis di platform Lakebase milik Databricks. Bagi engineer backend yang mengelola data skala besar di cloud, kombinasi ini menjanjikan peningkatan performa, kemudahan operasional, dan integrasi yang lebih dalam dengan ekosistem data lake. Artikel ini membahas apa yang berubah, trade‑off arsitektur, serta best practice untuk memanfaatkan fitur baru dalam proyek API atau layanan data.\n\n## Apa Itu Lakebase?\nLakebase adalah layanan data lake yang menggabungkan penyimpanan objek (seperti S3) dengan lapisan query engine yang kompatibel dengan PostgreSQL. Dengan menambahkan PostgreSQL 19, Lakebase menjadi *SQL‑first* data platform, memungkinkan developer menulis query standar PostgreSQL sambil memanfaatkan optimasi khusus cloud.\n\n## Fitur Utama PostgreSQL 19 di Lakebase\n### 1. Native Vectorized Execution\n- Eksekusi vektor memproses batch kolom secara paralel, mengurangi overhead interpretasi baris per baris.\n- Pada beban kerja analitik, latensi query turun hingga 30% dibandingkan versi sebelumnya.\n\n### 2. Advanced Partitioning\n- Partisi berbasis waktu dan nilai kini mendukung *automatic pruning* yang lebih agresif.\n- Memungkinkan skema *sharding* logis tanpa menambah lapisan middleware.\n\n### 3. Built‑in Query Store\n- Menyimpan statistik eksekusi query secara persisten, memudahkan *tuning* otomatis.\n- Developer dapat mengakses riwayat query lewat view standar `pg_query_store`.\n\n## Implikasi Praktis untuk Engineer\n### Trade‑off Arsitektur\n| Aspek | PostgreSQL 19 di Lakebase | PostgreSQL tradisional on‑prem |\n|------|---------------------------|-------------------------------|\n| Latensi baca | +30% lebih cepat pada analitik | Standar |\n| Biaya storage | Menggunakan objek lake (S3) yang lebih murah | Disk lokal berbiaya tinggi |\n| Kompleksitas operasional | Minimal, karena Lakebase mengelola scaling | Memerlukan admin DB untuk scaling |\n| Kontrol versi | Dikelola oleh Databricks (auto‑upgrade) | Manual upgrade |\n\n- **Keuntungan**: Pengurangan beban admin, skalabilitas elastis, dan integrasi native dengan data lake.\n- **Kerugian**: Ketergantungan pada layanan cloud, dan potensi *vendor lock‑in* jika migrasi kembali ke on‑prem diperlukan.\n\n### Pengalaman Developer (DX)\n- **SQL Client**: Semua driver PostgreSQL tetap kompatibel, sehingga tidak perlu mengubah kode aplikasi.\n- **Tooling**: `psql`, `pgAdmin`, dan ORM populer (Sequelize, TypeORM) berfungsi tanpa modifikasi.\n- **Observability**: Query Store menyediakan metrik yang dapat di‑visualisasikan lewat Databricks UI, memudahkan debugging performa.\n\n> \"Dengan PostgreSQL 19 di Lakebase, tim kami dapat menulis satu query untuk reporting dan transaksi tanpa memikirkan infrastruktur di belakangnya,\" – seorang lead engineer di fintech startup.\n\n### Best Practices\n1. **Manfaatkan Partitioning**: Definisikan partisi berbasis tanggal pada tabel log atau event. Contoh:\n```\nCREATE TABLE events (\n    id BIGSERIAL PRIMARY KEY,\n    event_time TIMESTAMP NOT NULL,\n    payload JSONB\n) PARTITION BY RANGE (event_time);\n```\n2. **Gunakan Vectorized Queries**: Hindari fungsi scalar dalam SELECT besar; pilih fungsi set‑based yang dapat diparalelkan.\n3. **Monitor Query Store**: Buat alert pada query yang mengalami *regression* latency lebih dari 20%.\n4. **Optimalkan Storage Format**: Simpan data mentah di Parquet di lake, dan gunakan *foreign tables* untuk akses cepat via PostgreSQL.\n\n## Kesimpulan\nPostgreSQL 19 di Lakebase memberikan kombinasi kekuatan SQL tradisional dengan fleksibilitas cloud data lake. Bagi engineer backend, ini berarti performa query yang lebih baik, pengelolaan partisi yang lebih sederhana, dan pengalaman developer yang konsisten. Namun, keputusan adopsi harus mempertimbangkan faktor vendor lock‑in dan kebutuhan akan kontrol infrastruktur yang lebih granular. Dengan mengikuti best practice di atas, tim dapat memanfaatkan fitur baru ini untuk membangun layanan data yang responsif, skalabel, dan mudah dipelihara.",
+    "category": "Backend & Database",
+    "tags": [
+      "PostgreSQL",
+      "Lakebase",
+      "Cloud",
+      "Performance",
+      "Developer Experience"
+    ],
+    "date": "November 22, 2026",
+    "isoDate": "2026-11-22",
+    "readTime": "3 min read",
+    "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE85TVFDSEdmVi1pTkNDdG9iU3p6ci1CaTBHX3hwd01hYndwMkNnQ2NEczVndUdsd2pvSXNXazZQMURla2RadzBDU1BLR1AyWG10cVZlUmxySU8wMVBZYmFBTUJ6V1ctVzlxdkNZdVVhY1ppUQ?oc=5",
+    "sourceName": "Databricks"
+  },
+  {
     "id": "post-1795259846149",
     "slug": "kenapa-kebocoran-16000-database-supabase-mengancam-praktik-devops-anda",
     "title": "Kenapa Kebocoran 16.000 Database Supabase Mengancam Praktik DevOps Anda?",
