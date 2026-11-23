@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Mon, 23 Nov 2026 01:17:25 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 11:17:25 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Claude Code Bisa Membuat Hourglass Pemblokir Aplikasi Mengganggu?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-claude-code-bisa-membuat-hourglass-pemblokir-aplikasi-mengganggu</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-claude-code-bisa-membuat-hourglass-pemblokir-aplikasi-mengganggu</guid>
+      <pubDate>Mon, 23 Nov 2026 01:00:00 GMT</pubDate>
+      <category>AI &amp; Developer Tools</category>
+      <description><![CDATA[Claude Code dipakai untuk membangun hourglass yang memblokir aplikasi mengganggu, menampilkan potensi AI dalam tooling produktivitas developer.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa GladiosWAF Mengubah Pendekatan Keamanan Web dengan Zero-Rule AI?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-gladioswaf-mengubah-pendekatan-keamanan-web-dengan-zero-rule-ai</link>
