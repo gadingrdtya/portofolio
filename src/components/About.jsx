@@ -111,6 +111,44 @@ export default function About() {
                 <div className="min-w-0">
                   <span className="block text-[11px] font-mono text-primary font-bold uppercase tracking-wider">PROFESSIONAL CERTIFICATION</span>
                   <h4 className="mt-0.5 flex min-h-[40px] items-center font-heading text-base font-black uppercase text-light-text-primary dark:text-text-primary leading-tight">
+                    BADAN NASIONAL SERTIFIKASI PROFESI
+                  </h4>
+                </div>
+              </div>
+              <div className="mt-4 flex-1 space-y-1.5">
+                <p className="text-xs font-semibold text-light-text-primary dark:text-text-primary">
+                  Junior Web Programmer
+                </p>
+                <p className="text-xs font-mono text-light-text-secondary dark:text-text-secondary leading-relaxed break-words">
+                  Issued Jul 2026 • Credential ID: TIK.705.01359.2026
+                </p>
+                <p className="text-[11px] text-light-text-secondary dark:text-text-secondary leading-relaxed pt-1">
+                  Focus on structured programming, clean UI implementation, and best-practice code that is well-documented and easy to debug.
+                </p>
+              </div>
+
+              <div className="mt-4 pt-4 border-t border-light-border dark:border-border">
+                <a
+                  href="https://drive.google.com/file/d/1JtakFPcx4iGYXASLgZ2BxORTJ-8fDBg8/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full py-2 px-3 text-xs font-bold uppercase rounded border border-light-border dark:border-border hover:border-primary hover:text-primary dark:hover:text-primary transition-colors text-light-text-primary dark:text-text-primary"
+                >
+                  <ExternalLink className="w-3.5 h-3.5 text-primary" />
+                  <span>Verify Credential</span>
+                </a>
+              </div>
+            </div>
+
+            {/* 2. Certification Card */}
+            <div className="rounded-lg border border-light-border dark:border-border bg-light-surface dark:bg-surface p-6 hover:border-primary transition-colors flex h-full flex-col">
+              <div className="flex items-start gap-3">
+                <div className="p-2.5 rounded bg-primary/10 text-primary shrink-0">
+                  <Award className="w-6 h-6" />
+                </div>
+                <div className="min-w-0">
+                  <span className="block text-[11px] font-mono text-primary font-bold uppercase tracking-wider">PROFESSIONAL CERTIFICATION</span>
+                  <h4 className="mt-0.5 flex min-h-[40px] items-center font-heading text-base font-black uppercase text-light-text-primary dark:text-text-primary leading-tight">
                     DICODING INDONESIA
                   </h4>
                 </div>
@@ -140,7 +178,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* 2. Certification Card */}
+            {/* 3. Certification Card */}
             <div className="rounded-lg border border-light-border dark:border-border bg-light-surface dark:bg-surface p-6 hover:border-primary transition-colors flex h-full flex-col">
               <div className="flex items-start gap-3">
                 <div className="p-2.5 rounded bg-primary/10 text-primary shrink-0">
