@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Tue, 24 Nov 2026 01:17:25 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 11:17:27 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa PostgreSQL Connection Pooling Menjadi Lebih Sulit di Kubernetes?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-postgresql-connection-pooling-menjadi-lebih-sulit-di-kubernetes</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-postgresql-connection-pooling-menjadi-lebih-sulit-di-kubernetes</guid>
+      <pubDate>Tue, 24 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Backend &amp; Database</category>
+      <description><![CDATA[Kubernetes menambah lapisan jaringan dan dinamika pod, membuat pengelolaan connection pool PostgreSQL menjadi tantangan baru bagi tim backend.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Cloudflare Workers dengan Terraform Bisa Dideploy dalam 12 Langkah dan 90 Menit?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-cloudflare-workers-dengan-terraform-bisa-dideploy-dalam-12-langkah-dan-90-menit</link>
