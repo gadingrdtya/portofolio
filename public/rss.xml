@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Wed, 25 Nov 2026 01:17:54 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 11:17:24 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa FastAPI Perlu JWT Authentication dan Rate Limiting dengan Redis?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-fastapi-perlu-jwt-authentication-dan-rate-limiting-dengan-redis</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-fastapi-perlu-jwt-authentication-dan-rate-limiting-dengan-redis</guid>
+      <pubDate>Wed, 25 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Architecture &amp; Security</category>
+      <description><![CDATA[FastAPI kini mengintegrasikan JWT dan Redis untuk otentikasi stateless serta pembatasan request, meningkatkan keamanan dan performa API secara signifikan.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa TypeScript Rapuh 1953 Masih Menjadi Inspirasi Utama Developer Frontend?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-typescript-rapuh-1953-masih-menjadi-inspirasi-utama-developer-frontend</link>
