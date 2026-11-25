@@ -1,5 +1,24 @@
 [
   {
+    "id": "post-1795569474509",
+    "slug": "kenapa-typescript-rapuh-1953-masih-menjadi-inspirasi-utama-developer-frontend",
+    "title": "Kenapa TypeScript Rapuh 1953 Masih Menjadi Inspirasi Utama Developer Frontend?",
+    "summary": "Naskah tulisan tangan 1953 yang rapuh menginspirasi praktik TypeScript modern, menyoroti pentingnya ketahanan kode, tipe aman, dan pengalaman developer.",
+    "content": "## Latar Belakang\n\nBerita dari *Waikato Times* mengangkat sebuah naskah tulisan tangan tahun 1953 yang masih terjaga meski rapuh. Penulis perjalanan veteran menganggapnya harta paling berharga. Dari sudut pandang frontend engineer, naskah ini menjadi metafora yang kuat: kode yang tampak rapuh pada awalnya dapat bertahan lama bila dikelola dengan prinsip yang tepat.\n\n## Pelajaran dari Naskah 1953\n\n### Kode yang Rapuh vs Kode yang Tangguh\n- **Kerapuhan fisik**: Kertas tipis mudah sobek, namun penulis melindunginya dengan teknik penyimpanan khusus. \n- **Kerapuhan kode**: Tanpa tipe yang kuat, perubahan kecil dapat memecah aplikasi. TypeScript menawarkan lapisan perlindungan serupa.\n\n> \"Seperti naskah tua yang disimpan dalam kotak kayu, kode TypeScript yang terdefinisi dengan baik melindungi logika bisnis dari kerusakan tak terduga,\" – kutipan fiktif dari penulis artikel.\n\n## Trade‑off Arsitektur Frontend\n\n| Aspek | Pendekatan Legacy (JavaScript) | Pendekatan Modern (TypeScript) |\n|-------|------------------------------|--------------------------------|\n| Kecepatan prototyping | Sangat cepat, tanpa tipe | Sedikit lebih lambat karena kompilasi |\n| Skalabilitas | Sulit diprediksi pada proyek besar | Lebih terkontrol, tipe statis membantu refactor |\n| Developer Experience (DX) | Minim tooling, error muncul di runtime | IDE autocomplete, compile‑time error, feedback cepat |\n\n### Type Safety vs Flexibility\n\n- **Keuntungan tipe**: Menangkap bug sebelum runtime, meningkatkan kepercayaan tim pada refactoring.\n- **Kerugian**: Overhead belajar, konfigurasi `tsconfig.json` yang kompleks.\n- **Solusi praktis**: Mulai dengan `strict: false` pada proyek kecil, tingkatkan secara bertahap.\n\n## Praktik Terbaik untuk DX\n\n1. **Gunakan Strict Mode secara progresif**\n   ```ts\n   // tsconfig.json contoh minimal\n   {\n     \"compilerOptions\": {\n       \"target\": \"es6\",\n       \"module\": \"esnext\",\n       \"strict\": true,\n       \"noImplicitAny\": true\n     }\n   }\n   ```\n2. **Integrasikan Linter dan Formatter** – ESLint dengan plugin `@typescript-eslint` memastikan kode tetap konsisten.\n3. **Manfaatkan Type‑Driven Development** – Definisikan tipe data domain terlebih dahulu, kemudian bangun UI di atasnya.\n4. **Refactor dengan Confidence** – Gunakan `tsc --noEmit` untuk memvalidasi perubahan tanpa menghasilkan output.\n\n## Menghubungkan Metafora Naskah dengan Praktik Nyata\n\n- **Penyimpanan**: Sama seperti naskah disimpan dalam kotak kayu, gunakan version control (Git) dengan branch protection dan code review.\n- **Restorasi**: Jika naskah mengalami kerusakan, penulis memperbaikinya secara manual. Di dunia kode, gunakan migrasi tipe (`type migration`) untuk memperbaiki tipe lama tanpa mengganggu fungsionalitas.\n- **Warisan**: Naskah menjadi warisan budaya; TypeScript menjadi warisan teknis yang memudahkan generasi berikutnya mengembangkan aplikasi tanpa harus mengulang kesalahan yang sama.\n\n## Kesimpulan\n\nMeskipun berasal dari era yang sangat berbeda, naskah 1953 mengajarkan prinsip universal: **ketahanan datang dari perencanaan, perlindungan, dan perawatan berkelanjutan**. Frontend developer dapat mengadopsi pendekatan ini dengan mengintegrasikan TypeScript secara strategis, menyeimbangkan kecepatan prototyping dengan keamanan tipe. Dengan begitu, kode yang tampak rapuh pada awalnya dapat bertahan lama—seperti naskah berharga yang tetap relevan setelah lebih dari setengah abad.\n",
+    "category": "Frontend Development",
+    "tags": [
+      "TypeScript",
+      "Legacy Code",
+      "Frontend",
+      "Developer Experience"
+    ],
+    "date": "November 25, 2026",
+    "isoDate": "2026-11-25",
+    "readTime": "4 min read",
+    "sourceUrl": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNcmVWVExIT1h4QXJaemZmTlJiZDI5amZJZXplcm1lZU9za3RtUHF0Ql9OaERnN3VrLTRQUGFyU2hicTU1dkFEeDBPU29VR1AweWhJYTJzSjZ0ZTloZTcxNTZGeXE4WEtiLVFyN0E3MlFfX0g0N183Rm9MZks3U2swSXhmcThidTJmUWdKX1RXRG1NdFVsQnlhOTl5U1d5X3pjUnVWTFpmVnRqQmg5b2hySlZjdUpyd0Fab1htQldmX283cmpVS0FrSy1Zb04?oc=5",
+    "sourceName": "Waikato Times"
+  },
+  {
     "id": "post-1795519047274",
     "slug": "kenapa-postgresql-connection-pooling-menjadi-lebih-sulit-di-kubernetes",
     "title": "Kenapa PostgreSQL Connection Pooling Menjadi Lebih Sulit di Kubernetes?",
