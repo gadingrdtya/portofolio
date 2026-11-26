@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Wed, 25 Nov 2026 11:17:24 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 01:17:23 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Secrets di settings.local.json Claude Code Bisa Bocor ke Docker Hub?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-secrets-di-settingslocaljson-claude-code-bisa-bocor-ke-docker-hub</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-secrets-di-settingslocaljson-claude-code-bisa-bocor-ke-docker-hub</guid>
+      <pubDate>Thu, 26 Nov 2026 01:00:00 GMT</pubDate>
+      <category>AI &amp; Developer Tools</category>
+      <description><![CDATA[Claude Code mengunggah file settings.local.json berisi API keys ke Docker Hub, memicu perdebatan keamanan CI/CD dan praktik secret management modern.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa FastAPI Perlu JWT Authentication dan Rate Limiting dengan Redis?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-fastapi-perlu-jwt-authentication-dan-rate-limiting-dengan-redis</link>

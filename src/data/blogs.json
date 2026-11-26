@@ -1,5 +1,25 @@
 [
   {
+    "id": "post-1795655843037",
+    "slug": "kenapa-secrets-di-settingslocaljson-claude-code-bisa-bocor-ke-docker-hub",
+    "title": "Kenapa Secrets di settings.local.json Claude Code Bisa Bocor ke Docker Hub?",
+    "summary": "Claude Code mengunggah file settings.local.json berisi API keys ke Docker Hub, memicu perdebatan keamanan CI/CD dan praktik secret management modern.",
+    "content": "## Latar Belakang\nBerita dari *GitGuardian Blog* mengungkap bahwa file `settings.local.json` milik Claude Code berisi secret (API key, token) terlanjur dipush ke Docker Hub. Insiden ini menyoroti celah umum dalam workflow developer: menaruh konfigurasi sensitif di dalam repository tanpa proteksi yang memadai. Bagi engineer backend, API, atau full‑stack, kejadian ini menjadi studi kasus tentang trade‑off antara kecepatan iterasi dan keamanan runtime.\n\n## Mengapa Secret Bocor?\n- **Konvensi Penamaan yang Menyesatkan**: File dengan akhiran `.local.json` biasanya dianggap hanya untuk lingkungan lokal, sehingga developer cenderung mengabaikannya dalam `.gitignore`.\n- **CI/CD Otomatis**: Docker image dibangun otomatis dari branch utama; tanpa linting secret, image yang di‑push ke Docker Hub sudah mengandung file mentah.\n- **Kurangnya Scanning**: Banyak pipeline belum mengintegrasikan scanner seperti *GitGuardian* atau *TruffleHog* pada tahap pre‑commit.\n\n> \"Jika secret tidak pernah masuk ke version control, risiko kebocoran berkurang drastis\" – kutipan anonim dari tim keamanan DevOps.\n\n## Dampak Praktis bagi Engineer\n1. **Komplikasi Deploy** – Secret yang terekspos dapat di‑scrape oleh pihak tak berwenang, mengakibatkan penyalahgunaan layanan pihak ketiga (misalnya OpenAI API). \n2. **Penurunan Developer Experience (DX)** – Setelah insiden, tim harus menghabiskan waktu untuk rotasi kunci, memperbaiki image, dan menambah proses review, mengurangi produktivitas.\n3. **Kepatuhan & Audit** – Banyak standar (ISO 27001, SOC2) menuntut kontrol ketat atas secret; kebocoran melanggar compliance dan menambah beban audit.\n\n## Praktik Terbaik untuk Mencegah Kebocoran\n### 1. Struktur Direktori yang Aman\n```text\nproject-root/\n├─ src/\n├─ config/\n│  ├─ settings.json        # non‑sensitive defaults\n│  └─ settings.local.json  # .gitignore!\n├─ .gitignore\n└─ Dockerfile\n```\nPastikan `settings.local.json` tercantum di `.gitignore` **sebelum** commit pertama.\n\n### 2. Integrasi Secret Scanning pada CI\n| Tahap | Alat | Kelebihan |\n|-------|------|----------|\n| Pre‑commit | git‑secret, pre‑commit‑hooks | Cepat, lokal, tidak butuh jaringan |\n| Pull‑request | GitGuardian, CodeQL | Deteksi berbasis AI, laporan terpusat |\n| Build pipeline | TruffleHog, Snyk | Memindai image sebelum push |\n\n### 3. Gunakan Secret Management Service\nAlihkan semua credential ke layanan terkelola seperti **HashiCorp Vault**, **AWS Secrets Manager**, atau **GCP Secret Manager**. Aplikasi membaca secret pada runtime via environment variable atau side‑car container.\n\n### 4. Rotasi Kunci Otomatis\nImplementasikan rotasi periodik (mis. tiap 30 hari) menggunakan script CI yang memanggil API provider untuk menghasilkan token baru, lalu memperbarui secret store.\n\n## Contoh Implementasi di Claude Code\n```json\n// settings.local.json (tidak pernah commit)\n{\n  \"openai_api_key\": \"sk-xxxxxxxxxxxxxxxx\",\n  \"db_password\": \"p@ssw0rd!\",\n  \"log_level\": \"debug\"\n}\n```\n```dockerfile\n# Dockerfile contoh yang aman\nFROM node:18-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --only=production\nCOPY . .\n# Jangan COPY settings.local.json!\nCMD [\"node\",\"src/index.js\"]\n```\nDengan **Dockerfile** di atas, file sensitif tidak termasuk dalam image, sehingga Docker Hub hanya berisi binary yang bersih.\n\n## Kesimpulan\nInsiden Claude Code mengingatkan bahwa kecepatan pengembangan tidak boleh mengorbankan keamanan. Praktik *secret‑first*—menyimpan credential di luar kode, men‑scan setiap commit, dan memanfaatkan layanan secret management—menjadi fondasi DX yang stabil. Engineer yang mengadopsi pola ini tidak hanya melindungi aplikasi, tapi juga mengurangi beban operasional tim keamanan, memungkinkan fokus pada fitur baru tanpa takut kebocoran data.\n",
+    "category": "AI & Developer Tools",
+    "tags": [
+      "Claude",
+      "AI",
+      "Developer Tools",
+      "Security",
+      "Docker"
+    ],
+    "date": "November 26, 2026",
+    "isoDate": "2026-11-26",
+    "readTime": "4 min read",
+    "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE40Qkk1c0cxQ1llaUhBaGNaQzhycVdBSk1PY1JCZWcxbVVBXzlSQXlla2hjT0VmSFVrV3E5SUJxcDRfYnlkQWdpQ2lLLWhwbW5ZZ3ZsbXRCd2VtekJsMzlST180VFpGdlZjRTZnX0tpTDdvSllK?oc=5",
+    "sourceName": "GitGuardian Blog"
+  },
+  {
     "id": "post-1795605444951",
     "slug": "kenapa-fastapi-perlu-jwt-authentication-dan-rate-limiting-dengan-redis",
     "title": "Kenapa FastAPI Perlu JWT Authentication dan Rate Limiting dengan Redis?",
