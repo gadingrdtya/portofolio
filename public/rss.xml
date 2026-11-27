@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Thu, 26 Nov 2026 11:17:31 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 01:17:24 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Node.js Hosting Antara Serverless dan VPS Menawarkan Biaya Prediktif Tanpa Cold Starts?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-nodejs-hosting-antara-serverless-dan-vps-menawarkan-biaya-prediktif-tanpa-cold-starts</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-nodejs-hosting-antara-serverless-dan-vps-menawarkan-biaya-prediktif-tanpa-cold-starts</guid>
+      <pubDate>Fri, 27 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Backend &amp; Database</category>
+      <description><![CDATA[Node.js hosting yang menggabungkan kelebihan serverless dan VPS memberikan biaya terprediksi tanpa cold starts, cocok untuk API backend modern.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Memilih Langkah Aman Berikutnya dalam Modernisasi Aplikasi?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-memilih-langkah-aman-berikutnya-dalam-modernisasi-aplikasi</link>
