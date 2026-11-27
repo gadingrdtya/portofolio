@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Fri, 27 Nov 2026 01:17:24 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 11:17:35 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Kode TypeScript Warisan 1953 Masih Menjadi Tantangan Utama Frontend Developer?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-kode-typescript-warisan-1953-masih-menjadi-tantangan-utama-frontend-developer</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-kode-typescript-warisan-1953-masih-menjadi-tantangan-utama-frontend-developer</guid>
+      <pubDate>Fri, 27 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Frontend Development</category>
+      <description><![CDATA[Artikel membahas mengapa kode TypeScript berusia puluhan tahun tetap menjadi beban bagi tim frontend, serta strategi migrasi, performa, dan developer experience yang praktis.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Node.js Hosting Antara Serverless dan VPS Menawarkan Biaya Prediktif Tanpa Cold Starts?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-nodejs-hosting-antara-serverless-dan-vps-menawarkan-biaya-prediktif-tanpa-cold-starts</link>
