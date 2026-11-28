@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Fri, 27 Nov 2026 11:17:35 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 01:17:24 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Cloudflare Mengembangkan Public Certificate Authority untuk Keamanan Web Post-Quantum?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-cloudflare-mengembangkan-public-certificate-authority-untuk-keamanan-web-post-quantum</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-cloudflare-mengembangkan-public-certificate-authority-untuk-keamanan-web-post-quantum</guid>
+      <pubDate>Sat, 28 Nov 2026 01:00:00 GMT</pubDate>
+      <category>Architecture &amp; Security</category>
+      <description><![CDATA[Cloudflare meluncurkan Public CA yang mendukung algoritma post‑quantum, memberi developer cara mudah mengamankan TLS tanpa menunggu standar industri.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Kode TypeScript Warisan 1953 Masih Menjadi Tantangan Utama Frontend Developer?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-kode-typescript-warisan-1953-masih-menjadi-tantangan-utama-frontend-developer</link>
