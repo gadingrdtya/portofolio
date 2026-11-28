@@ -5,9 +5,18 @@
     <link>https://gadingrdtya.my.id/blog</link>
     <description>Factual tech dispatches, architecture explainers, software engineering analyses, and hardware developments.</description>
     <language>id-ID</language>
-    <lastBuildDate>Sat, 28 Nov 2026 01:17:24 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 11:17:31 GMT</lastBuildDate>
     <atom:link href="https://gadingrdtya.my.id/rss.xml" rel="self" type="application/rss+xml" />
 
+    <item>
+      <title><![CDATA[Kenapa Claude Code Bisa Menyelesaikan Pekerjaan Tanpa Pengawasan?]]></title>
+      <link>https://gadingrdtya.my.id/blog/kenapa-claude-code-bisa-menyelesaikan-pekerjaan-tanpa-pengawasan</link>
+      <guid isPermaLink="true">https://gadingrdtya.my.id/blog/kenapa-claude-code-bisa-menyelesaikan-pekerjaan-tanpa-pengawasan</guid>
+      <pubDate>Sat, 28 Nov 2026 01:00:00 GMT</pubDate>
+      <category>AI &amp; Developer Tools</category>
+      <description><![CDATA[Claude Code dari Anthropic dapat menulis kode, buat unit test, dan push ke repo secara otomatis, mengurangi waktu pengerjaan hingga 90% untuk tugas rutin.]]></description>
+      <source url="https://gadingrdtya.my.id/rss.xml">Gading Raditya Pratama Tech Dispatch</source>
+    </item>
     <item>
       <title><![CDATA[Kenapa Cloudflare Mengembangkan Public Certificate Authority untuk Keamanan Web Post-Quantum?]]></title>
       <link>https://gadingrdtya.my.id/blog/kenapa-cloudflare-mengembangkan-public-certificate-authority-untuk-keamanan-web-post-quantum</link>
